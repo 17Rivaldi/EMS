@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/starter', 'starterController@index')->name('starter');
+
+// Routes Landing Page
+Route::get('/home', 'HomeController@index')->name('home');
