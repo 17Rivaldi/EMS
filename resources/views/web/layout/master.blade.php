@@ -23,6 +23,8 @@
 
     <link href="{{ asset('css/web/templatemo-festava-live.css') }}" rel="stylesheet">
 
+    <link href="{{ asset('css/card-carousel.css') }}" rel="stylesheet" type="text/css" >
+
     @yield('addCss')
 
 </head>
@@ -74,11 +76,11 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_4">Schedule</a>
+                            <a class="nav-link click-scroll" href="#section_4">Upcoming</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_5">Pricing</a>
+                            <a class="nav-link click-scroll" href="#section_5">Event's</a>
                         </li>
 
                         <li class="nav-item">
@@ -242,12 +244,13 @@
     </footer>
 
     <!-- JAVASCRIPT FILES -->
+
     <script src="{{ asset('js/web/jquery.min.js') }}"></script>
     <script src="{{ asset('js/web/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/web/jquery.sticky.js') }}"></script>
     <script src="{{ asset('js/web/click-scroll.js') }}"></script>
     <script src="{{ asset('js/web/custom.js') }}"></script>
-
+    <script type="text/javascript" src="{{ asset('js/card-slider.js') }}"></script>
     @yield('addJs')
 
 </body>

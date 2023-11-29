@@ -223,98 +223,168 @@
 
     <section class="schedule-section section-padding" id="section_4">
         <div class="container">
-            <div class="row">
-
-                <div class="col-12 text-center">
-                    <h2 class="text-white mb-4">Event Schedule</h1>
-
-                        <div class="table-responsive">
-                            <table class="schedule-table table table-dark">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Date</th>
-
-                                        <th scope="col">Wednesday</th>
-
-                                        <th scope="col">Thursday</th>
-
-                                        <th scope="col">Friday</th>
-
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">Day 1</th>
-
-                                        <td class="table-background-image-wrap pop-background-image">
-                                            <h3>Pop Night</h3>
-
-                                            <p class="mb-2">5:00 - 7:00 PM</p>
-
-                                            <p>By Adele</p>
-
-                                            <div class="section-overlay"></div>
-                                        </td>
-
-                                        <td style="background-color: #F3DCD4"></td>
-
-                                        <td class="table-background-image-wrap rock-background-image">
-                                            <h3>Rock & Roll</h3>
-
-                                            <p class="mb-2">7:00 - 11:00 PM</p>
-
-                                            <p>By Rihana</p>
-
-                                            <div class="section-overlay"></div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="row">Day 2</th>
-
-                                        <td style="background-color: #ECC9C7"></td>
-
-                                        <td>
-                                            <h3>DJ Night</h3>
-
-                                            <p class="mb-2">6:30 - 9:30 PM</p>
-
-                                            <p>By Rihana</p>
-                                        </td>
-
-                                        <td style="background-color: #D9E3DA"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="row">Day 3</th>
-
-                                        <td class="table-background-image-wrap country-background-image">
-                                            <h3>Country Music</h3>
-
-                                            <p class="mb-2">4:30 - 7:30 PM</p>
-
-                                            <p>By Rihana</p>
-
-                                            <div class="section-overlay"></div>
-                                        </td>
-
-                                        <td style="background-color: #D1CFC0"></td>
-
-                                        <td>
-                                            <h3>Free Styles</h3>
-
-                                            <p class="mb-2">6:00 - 10:00 PM</p>
-
-                                            <p>By Members</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                </div>
+        <!-- awal coba -->
+            <div class="col-12 text-center">
+                <h2 class="mb-4">Upcoming Event's</h1>
             </div>
-        </div>
+            <div id="myCarousel" class="carousel slide container gap-10" data-bs-ride="carousel">
+                <div class="carousel-inner w-200">
+                    <div class="carousel-item active">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=1">
+                                <div class="card-title">    
+                                    <h6>Konser Metalica</h6>
+                                </div>
+                                <div class="card-text">
+                                    <i class="bi bi-geo-alt"></i> Jakarta
+                                    <br>
+                                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    Penyelenggara
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=2">
+                                <div class="card-title">    
+                                    <h6>Konser MetaliCa</h6>
+                                </div>
+                                <div class="card-text">
+                                    <i class="bi bi-geo-alt"></i> Jakarta
+                                    <br>
+                                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    Penyelenggara
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=3">
+                                <div class="card-title">    
+                                    <h6>Konser MetaliCa</h6>
+                                </div>
+                                <div class="card-text">
+                                    <i class="bi bi-geo-alt"></i> Jakarta
+                                    <br>
+                                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    Penyelenggara
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=4">
+                                <div class="card-title">    
+                                    <h6>Konser MetaliCa</h6>
+                                </div>
+                                <div class="card-text">
+                                    <i class="bi bi-geo-alt"></i> Jakarta
+                                    <br>
+                                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    Penyelenggara
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=5">
+                                <div class="card-title">    
+                                    <h6>Konser MetaliCa</h6>
+                                </div>
+                                <div class="card-text">
+                                    <i class="bi bi-geo-alt"></i> Jakarta
+                                    <br>
+                                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    Penyelenggara
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=6">
+                                <div class="card-title">    
+                                    <h6>Konser MetaliCa</h6>
+                                </div>
+                                <div class="card-text">
+                                    <i class="bi bi-geo-alt"></i> Jakarta
+                                    <br>
+                                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    Penyelenggara
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=7">
+                                <div class="card-title">    
+                                    <h6>Konser MetaliCa</h6>
+                                </div>
+                                <div class="card-text">
+                                    <i class="bi bi-geo-alt"></i> Jakarta
+                                    <br>
+                                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    Penyelenggara
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=8">
+                                <div class="card-title">    
+                                    <h6>Konser MetaliCa</h6>
+                                </div>
+                                <div class="card-text">
+                                    <i class="bi bi-geo-alt"></i> Jakarta
+                                    <br>
+                                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    Penyelenggara
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        <!-- akhir coba -->
+        </div> 
     </section>
 
     <section class="pricing-section section-padding section-bg" id="section_5">
@@ -322,79 +392,171 @@
             <div class="row">
 
                 <div class="col-lg-8 col-12 mx-auto">
-                    <h2 class="text-center mb-4">Plans, you' love</h2>
+                    <h2 class="text-center mb-4">Event's</h2>
                 </div>
 
-                <div class="col-lg-6 col-12">
-                    <div class="pricing-thumb">
-                        <div class="d-flex">
-                            <div>
-                                <h3><small>Early Bird</small> $120</h3>
-
-                                <p>Including good things:</p>
-                            </div>
-
-                            <p class="pricing-tag ms-auto">Save up to <span>50%</span></h2>
-                        </div>
-
-                        <ul class="pricing-list mt-3">
-                            <li class="pricing-list-item">platform for potential customers</li>
-
-                            <li class="pricing-list-item">digital experience</li>
-
-                            <li class="pricing-list-item">high-quality sound</li>
-
-                            <li class="pricing-list-item">standard content</li>
-                        </ul>
-
-                        <a class="link-fx-1 color-contrast-higher mt-4" href="ticket.html">
-                            <span>Buy Ticket</span>
-                            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
-                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="16" cy="16" r="15.5"></circle>
-                                    <line x1="10" y1="18" x2="16" y2="12"></line>
-                                    <line x1="16" y1="12" x2="22" y2="18"></line>
-                                </g>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-12 mt-4 mt-lg-0">
-                    <div class="pricing-thumb">
-                        <div class="d-flex">
-                            <div>
-                                <h3><small>Standard</small> $240</h3>
-
-                                <p>What makes a premium festava?</p>
+                <div id="list-event" class="carousel slide container gap-10" data-bs-ride="carousel">
+                <div class="carousel-inner w-200">
+                    <div class="carousel-item active">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=1">
+                                <div class="card-title">    
+                                    <h6>Konser Metalica</h6>
+                                </div>
+                                <div class="card-text">
+                                    <i class="bi bi-geo-alt"></i> Jakarta
+                                    <br>
+                                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    Penyelenggara
+                                </div>
                             </div>
                         </div>
-
-                        <ul class="pricing-list mt-3">
-                            <li class="pricing-list-item">platform for potential customers</li>
-
-                            <li class="pricing-list-item">digital experience</li>
-
-                            <li class="pricing-list-item">high-quality sound</li>
-
-                            <li class="pricing-list-item">premium content</li>
-
-                            <li class="pricing-list-item">live chat support</li>
-                        </ul>
-
-                        <a class="link-fx-1 color-contrast-higher mt-4" href="ticket.html">
-                            <span>Buy Ticket</span>
-                            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
-                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="16" cy="16" r="15.5"></circle>
-                                    <line x1="10" y1="18" x2="16" y2="12"></line>
-                                    <line x1="16" y1="12" x2="22" y2="18"></line>
-                                </g>
-                            </svg>
-                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=2">
+                                <div class="card-title">    
+                                    <h6>Konser MetaliCa</h6>
+                                </div>
+                                <div class="card-text">
+                                    <i class="bi bi-geo-alt"></i> Jakarta
+                                    <br>
+                                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    Penyelenggara
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=3">
+                                <div class="card-title">    
+                                    <h6>Konser MetaliCa</h6>
+                                </div>
+                                <div class="card-text">
+                                    <i class="bi bi-geo-alt"></i> Jakarta
+                                    <br>
+                                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    Penyelenggara
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=4">
+                                <div class="card-title">    
+                                    <h6>Konser MetaliCa</h6>
+                                </div>
+                                <div class="card-text">
+                                    <i class="bi bi-geo-alt"></i> Jakarta
+                                    <br>
+                                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    Penyelenggara
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=5">
+                                <div class="card-title">    
+                                    <h6>Konser MetaliCa</h6>
+                                </div>
+                                <div class="card-text">
+                                    <i class="bi bi-geo-alt"></i> Jakarta
+                                    <br>
+                                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    Penyelenggara
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=6">
+                                <div class="card-title">    
+                                    <h6>Konser MetaliCa</h6>
+                                </div>
+                                <div class="card-text">
+                                    <i class="bi bi-geo-alt"></i> Jakarta
+                                    <br>
+                                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    Penyelenggara
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=7">
+                                <div class="card-title">    
+                                    <h6>Konser MetaliCa</h6>
+                                </div>
+                                <div class="card-text">
+                                    <i class="bi bi-geo-alt"></i> Jakarta
+                                    <br>
+                                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    Penyelenggara
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=8">
+                                <div class="card-title">    
+                                    <h6>Konser MetaliCa</h6>
+                                </div>
+                                <div class="card-text">
+                                    <i class="bi bi-geo-alt"></i> Jakarta
+                                    <br>
+                                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                                </div>
+                                <div class="card-footer mt-auto">
+                                    Penyelenggara
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#list-event" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#list-event" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
 
+            </div>
+            <div class="col-lg-8 col-12 mx-auto mt-10">
+                <br>
+                <br>
+                <a href="" class="btn custom-btn d-lg-block d-none">View more Event's</a>
             </div>
         </div>
     </section>

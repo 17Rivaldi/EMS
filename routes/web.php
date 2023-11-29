@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/list-event', function () {
+    return view('home');
+});
+
 Route::get('/starter', 'starterController@index')->name('starter');
 
 // Routes Landing Page
