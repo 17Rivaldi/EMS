@@ -22,3 +22,6 @@ Route::get('/starter', 'starterController@index')->name('starter');
 
 // Routes Landing Page
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Detail Event
+Route::get('/detail', 'DetailController@index')->name('detail');
