@@ -10,4 +10,9 @@ class HomeController extends Controller
     {
         return view('web.home');
     }
+
+    public function listEvent()
+    {
+        return view('web.list-event');
+    }
 }

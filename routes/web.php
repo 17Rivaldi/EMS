@@ -15,9 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/list-event', function () {
-    return view('home');
-});
+//routes ke halaman daftar event
+Route::get('/list-event', 'HomeController@ListEvent')->name('list-event');
 
 Route::get('/starter', 'starterController@index')->name('starter');
 

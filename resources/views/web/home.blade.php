@@ -223,7 +223,6 @@
 
     <section class="schedule-section section-padding" id="section_4">
         <div class="container">
-        <!-- awal coba -->
             <div class="col-12 text-center">
                 <h2 class="mb-4">Upcoming Event's</h1>
             </div>
@@ -383,7 +382,6 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-        <!-- akhir coba -->
         </div> 
     </section>
 
@@ -556,7 +554,7 @@
             <div class="col-lg-8 col-12 mx-auto mt-10">
                 <br>
                 <br>
-                <a href="" class="btn custom-btn d-lg-block d-none">View more Event's</a>
+                <a href="{{ route('list-event') }}" class="btn custom-btn d-lg-block d-none">View more Event's</a>
             </div>
         </div>
     </section>
