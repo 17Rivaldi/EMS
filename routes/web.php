@@ -11,8 +11,12 @@
 |
 */
 
+Route::get('/', function() {
+    return redirect(route('login'));
+});
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('web.home');
 });
 
 //routes ke halaman daftar event
@@ -25,3 +29,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Detail Event
 Route::get('/detail', 'DetailController@index')->name('detail');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

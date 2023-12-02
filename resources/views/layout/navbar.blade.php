@@ -24,10 +24,26 @@
                 <li class="nav-item d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
                         <i class="fa fa-user me-sm-1"></i>
-                        <span class="d-sm-inline d-none">Sign In</span>
+                        <span class="d-sm-inline d-none ">
+                            {{ Auth::user()->name }}
+                        </span>
                     </a>
                 </li>
-                <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                @guest
+                @if (Route::has('register'))
+                @endif
+                @else
+                    <a class="btn btn-primary" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                @endguest
+                <!-- <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
                         <div class="sidenav-toggler-inner">
                             <i class="sidenav-toggler-line bg-white"></i>
@@ -47,7 +63,7 @@
                         <i class="fa fa-bell cursor-pointer"></i>
                     </a>
 
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
