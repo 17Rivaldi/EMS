@@ -33,3 +33,5 @@ Route::get('/detail', 'DetailController@index')->name('detail');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/form-pembayaran', 'FormpembayaranController@index')->name('form-pembayaran');

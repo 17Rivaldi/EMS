@@ -31,7 +31,7 @@
                         </div>
                         <div class="card-footer bg-transparent border-0">
                             <div class="d-grid gap-2">
-                                <button class="btn btn-primary" type="button">Beli Tiket</button>
+                            <a href="{{ route('form-pembayaran') }}" class="btn btn-primary btn-beli-tiket" type="button">Beli Tiket</a>
                             </div>
                         </div>
                     </div>
