@@ -25,7 +25,11 @@
                     <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
                         <i class="fa fa-user me-sm-1"></i>
                         <span class="d-sm-inline d-none ">
-                            {{ Auth::user()->name }}
+                            @if(auth()->check())
+                                <span>{{auth()->user()->name}}</span>
+                            @endif
+
+                            {{-- {{ Auth::user()->name }} --}}
                         </span>
                     </a>
                 </li>
