@@ -35,3 +35,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/form-pembayaran', 'FormpembayaranController@index')->name('form-pembayaran');
+
+Route::get('/tiket-saya', 'TiketSayaController@index')->name('tiket-saya');
+
+Route::get('/informasi-akun', 'InformasiAkunController@index')->name('informasi-akun');
