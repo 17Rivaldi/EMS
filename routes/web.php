@@ -11,28 +11,31 @@
 |
 */
 
-Route::get('/', function() {
-    return redirect(route('login'));
-});
+// Route::get('/', function () {
+//     return redirect(route('login'));
+// });
 
 Route::get('/', function () {
     return view('web.home');
 });
 
+Auth::routes();
+
+// Routes Membatasi Hanya Role Admin
+Route::middleware('role:admin')->group(function () {
+    // Routes Dashboard Admin
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+});
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 //routes ke halaman daftar event
 Route::get('/list-event', 'HomeController@ListEvent')->name('list-event');
-
-Route::get('/starter', 'starterController@index')->name('starter');
-
-// Routes Landing Page
-Route::get('/home', 'HomeController@index')->name('home');
 
 // Detail Event
 Route::get('/detail', 'DetailController@index')->name('detail');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/starter', 'starterController@index')->name('starter');
 
 Route::get('/form-pembayaran', 'FormpembayaranController@index')->name('form-pembayaran');
 

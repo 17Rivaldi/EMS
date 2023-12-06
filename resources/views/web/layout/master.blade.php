@@ -23,7 +23,7 @@
 
     <link href="{{ asset('css/web/templatemo-festava-live.css') }}" rel="stylesheet">
 
-    <link href="{{ asset('css/card-carousel.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/card-carousel.css') }}" rel="stylesheet" type="text/css">
 
     @yield('addCss')
 
@@ -54,7 +54,7 @@
                     Festava Live
                 </a>
 
-                <a href="{{ route ('login') }}" class="btn custom-btn d-lg-none ms-auto me-4">Login</a>
+                <a href="{{ route('login') }}" class="btn custom-btn d-lg-none ms-auto me-4">Login</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,7 +88,21 @@
                         </li>
                     </ul>
 
-                    <a href="{{ route ('login') }}" class="btn custom-btn d-lg-block d-none">Login</a>
+                    @guest
+                        <a href="{{ route('login') }}" class="btn custom-btn d-lg-block d-none">Login</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}"
+                                class="btn btn-outline-warning rounded-pill d-lg-block d-none ms-1">{{ __('Register') }}</a>
+                        @endif
+                    @else
+                        <a href="{{ route('logout') }}" class="btn custom-btn d-lg-block d-none"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    @endguest
                 </div>
             </div>
         </nav>
