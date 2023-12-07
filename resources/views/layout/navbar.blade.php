@@ -14,38 +14,44 @@
             <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-            <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                <div class="input-group">
-                    <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Type here..." />
-                </div>
-            </div>
-            <ul class="navbar-nav justify-content-end">
-                <li class="nav-item d-flex align-items-center">
-                    <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
-                        <i class="fa fa-user me-sm-1"></i>
-                        <span class="d-sm-inline d-none ">
-                            @if(auth()->check())
-                                <span>{{auth()->user()->name}}</span>
-                            @endif
-
-                            {{-- {{ Auth::user()->name }} --}}
-                        </span>
-                    </a>
-                </li>
+            <ul class="navbar-nav justify-content-end ms-md-auto">
                 @guest
-                @if (Route::has('register'))
-                @endif
+                    @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold px-2"
+                                href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                    @endif
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link text-white font-weight-bold px-2"
+                                href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @endif
                 @else
-                    <a class="btn btn-primary" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-white font-weight-bold px-0"
+                            href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="fa fa-user me-sm-1"></i>
+                            <span class="d-sm-inline d-none">
+                                {{ auth()->user()->name }}
+                            </span>
+                        </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="fas fa-sign-out-alt me-2"></i>
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                            <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i>Setting</a>
+                        </div>
+                    </li>
                 @endguest
                 <!-- <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">

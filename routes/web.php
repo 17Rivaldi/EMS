@@ -35,8 +35,6 @@ Route::get('/list-event', 'HomeController@ListEvent')->name('list-event');
 // Detail Event
 Route::get('/detail', 'DetailController@index')->name('detail');
 
-Route::get('/starter', 'starterController@index')->name('starter');
-
 Route::get('/form-pembayaran', 'FormpembayaranController@index')->name('form-pembayaran');
 
 Route::get('/tiket-saya', 'TiketSayaController@index')->name('tiket-saya');
