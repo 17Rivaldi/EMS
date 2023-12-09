@@ -4,14 +4,15 @@
     <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                <li class="breadcrumb-item text-sm">
-                    <a class="opacity-5 text-white" href="javascript:;">Pages</a>
+                <li class="breadcrumb-item">
+                    <a href="{{ route('dashboard') }}">
+                        <h6 class="text-white">Dashboard</h6>
+                    </a>
                 </li>
-                <li class="breadcrumb-item text-sm text-white active" aria-current="page">
-                    Dashboard
+                <li class="breadcrumb-item text-white active brd-active" aria-current="page">
+                    @yield('breadcrumb')
                 </li>
             </ol>
-            <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
             <ul class="navbar-nav justify-content-end ms-md-auto">
@@ -49,6 +50,7 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
+                            <a href="{{ route('home') }}" class="dropdown-item"><i class="fas fa-pager me-2"></i>Web</a>
                             <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i>Setting</a>
                         </div>
                     </li>

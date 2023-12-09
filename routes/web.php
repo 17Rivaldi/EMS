@@ -25,8 +25,16 @@ Auth::routes();
 Route::middleware('role:admin')->group(function () {
     // Routes Dashboard Admin
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+    // Route Daftar User
+    Route::get('/user', 'UserController@index')->name('user');
+    Route::get('users', 'UserController@index')->name('users.index');
+    // User Create
+    Route::get('users/create', 'UserController@create')->name('users.create');
+    Route::post('users', 'UserController@store')->name('users.store');
 });
 
+// Home Landing Page
 Route::get('/home', 'HomeController@index')->name('home');
 
 //routes ke halaman daftar event

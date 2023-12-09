@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Festava Live - Bootstrap 5 CSS Template</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,7 +51,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    Festava Live
+                    {{ config('app.name') }}
                 </a>
 
                 <a href="{{ route('login') }}" class="btn custom-btn d-lg-none ms-auto me-4">Login</a>
@@ -89,14 +89,25 @@
                     </ul>
 
                     @guest
-                        <a href="{{ route('login') }}" class="btn custom-btn d-lg-block d-none">Login</a>
+                        <a href="{{ route('login') }}" class="btn custom-btn d-lg-block d-none"><i
+                                class="bi-fingerprint mx-1"></i>Login</a>
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}"
-                                class="btn btn-outline-warning rounded-pill d-lg-block d-none ms-1">{{ __('Register') }}</a>
+                                class="btn btn-outline-warning rounded-pill d-lg-block d-none ms-1">{{ __('Register') }}<i
+                                    class="bi-fingerprint mx-1"></i></a>
                         @endif
                     @else
-                        <a href="{{ route('logout') }}" class="btn custom-btn d-lg-block d-none"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}
+                        @if (auth()->user()->hasRole('admin'))
+                            <a href="{{ route('dashboard') }}" class="btn btn-outline-warning rounded-pill mx-2"><i
+                                    class="bi-speedometer2 mx-1"></i>Admin</a>
+                        @endif
+                        @if (auth()->user()->hasRole('user'))
+                            <a href="{{ route('informasi-akun') }}" class="btn btn-outline-warning rounded-pill mx-2"><i
+                                    class="bi bi-person-circle mx-1"></i>Profile</a>
+                        @endif
+                        <a href="{{ route('logout') }}" class="btn custom-btn d-lg-block d-none mx-2"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
+                                class="bi-box-arrow-right mx-1"></i>{{ __('Logout') }}
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -119,7 +130,7 @@
                 <div class="row">
 
                     <div class="col-lg-6 col-12">
-                        <h2 class="text-white mb-lg-0">Festava Live</h2>
+                        <h2 class="text-white mb-lg-0">{{ config('app.name') }} Live</h2>
                     </div>
 
                     <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
@@ -233,25 +244,9 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-12 mt-5">
-                        <p class="copyright-text">Copyright © 2036 Festava Live Company</p>
-                        <p class="copyright-text">Distributed by: <a href="https://themewagon.com">ThemeWagon</a></p>
+                        <p class="copyright-text">Copyright © 2023 {{ config('app.name') }}</p>
                     </div>
 
-                    <div class="col-lg-8 col-12 mt-lg-5">
-                        <ul class="site-footer-links">
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">Terms &amp; Conditions</a>
-                            </li>
-
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">Privacy Policy</a>
-                            </li>
-
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">Your Feedback</a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>

@@ -92,7 +92,9 @@
 
 @section('addCss')
     <style>
-
+        .brd-active {
+            display: none;
+        }
     </style>
 @endsection
 
