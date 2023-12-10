@@ -17,6 +17,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
 
+    <link rel="icon" type="image/png" href="{{ asset('img/logo-ipeun.png') }}" />
+
     <link href="{{ asset('css/web/bootstrap.min.css') }}" rel="stylesheet">
 
     <link href="{{ asset('css/web/bootstrap-icons.css') }}" rel="stylesheet">

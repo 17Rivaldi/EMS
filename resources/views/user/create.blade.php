@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layouts.master')
 
 @section('content')
     <div class="row mt-4">
@@ -60,8 +60,8 @@
                         </div>
 
 
-                        <button type="submit" class="btn btn-primary">Create User</button>
-                        <a href="{{ route('user') }}" class="btn btn-danger" role="button">Batal</a>
+                        <button type="submit" class="btn btn-primary">Tambah User</button>
+                        <a href="{{ route('user.index') }}" class="btn btn-danger" role="button">Batal</a>
                     </form>
                 </div>
             </div>

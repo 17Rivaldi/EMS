@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layouts.master')
 
 @section('content')
     {{-- Main Content --}}
@@ -12,7 +12,7 @@
                                 <p class="text-sm mb-0 text-uppercase font-weight-bold">
                                     Total User
                                 </p>
-                                <h5 class="font-weight-bolder">53</h5>
+                                <h5 class="font-weight-bolder">{{ $totalUsers }}</h5>
                             </div>
                         </div>
                         <div class="col-4 text-end">

@@ -81,7 +81,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('user.edit', compact('user'));
+        $roles = Role::pluck('name', 'name');
+        return view('user.edit', compact('user', 'roles'));
     }
 
     /**
@@ -96,11 +97,21 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $id,
-            'password' => 'min:6',
+            'password' => 'nullable|min:6',
+            'roles' => 'required|array',
         ]);
 
         $user = User::find($id);
-        $user->update($request->all());
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+
+        // Update password jika diisi
+        if ($request->filled('password')) {
+            $user->password = bcrypt($request->input('password'));
+        }
+
+        $user->save();
+        $user->syncRoles($request->input('roles'));
 
         return redirect()->route('user.index')->with('success', 'User updated successfully');
     }
@@ -114,6 +125,10 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
+        // Pastikan user ditemukan
+        if (!$user) {
+            return redirect()->route('users.index')->with('error', 'User not found');
+        }
         $user->delete();
 
         return redirect()->route('users.index')->with('success', 'User deleted successfully');

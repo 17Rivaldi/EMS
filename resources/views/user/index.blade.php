@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layouts.master')
 
 @section('breadcrumb')
     User
@@ -37,10 +37,19 @@
                                         @endforeach
                                     </td>
                                     <td>{{ $user->created_at }}</td>
-                                    <td><a class="btn btn-primary text-xs my-auto" href="" role="button"><i
+                                    <td><a class="btn btn-primary text-xs my-auto"
+                                            href="{{ route('users.edit', $user->id) }}" role="button"><i
                                                 class="fas fa-edit me-1"></i>Edit</a>
-                                        <a class="btn btn-danger text-xs my-auto" href="#" role="button"><i
-                                                class="fas fa-trash me-1"></i>Hapus</a>
+                                        <!-- Formulir untuk DELETE -->
+                                        <form action="{{ route('users.destroy', $user->id) }}" method="POST"
+                                            style="display: inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger text-xs my-auto"
+                                                onclick="return confirm('Are you sure you want to delete this user?')">
+                                                <i class="fas fa-trash me-1"></i>Hapus
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

@@ -27,11 +27,16 @@ Route::middleware('role:admin')->group(function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
     // Route Daftar User
-    Route::get('/user', 'UserController@index')->name('user');
+    Route::get('/user', 'UserController@index')->name('user.index');
     Route::get('users', 'UserController@index')->name('users.index');
     // User Create
     Route::get('users/create', 'UserController@create')->name('users.create');
     Route::post('users', 'UserController@store')->name('users.store');
+    // User Edit
+    Route::get('/users/{id}/edit', 'UserController@edit')->name('users.edit');
+    Route::put('/users/{id}', 'UserController@update')->name('users.update');
+    // Hapus User
+    Route::delete('/users/{id}', 'UserController@destroy')->name('users.destroy');
 });
 
 // Home Landing Page
