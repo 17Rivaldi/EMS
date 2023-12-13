@@ -37,6 +37,21 @@ Route::middleware('role:admin')->group(function () {
     Route::put('/users/{id}', 'UserController@update')->name('users.update');
     // Hapus User
     Route::delete('/users/{id}', 'UserController@destroy')->name('users.destroy');
+
+
+
+    
+    //Event List
+    Route::get('/daftar-event', 'EventController@index')->name('daftar.event');
+
+    //Event Create
+    Route::get('/daftar-event/buat-event', 'EventController@create')->name('event.create');
+    Route::post('/daftar-event/buat-event', 'EventController@store')->name('event.store');
+
+    //Edit & Update
+    Route::get('/daftar-event/{event}/edit', 'EventController@edit')->name('event.edit');
+    Route::put('/daftar-event/{event}/edit', 'EventController@update')->name('event.update');
+    Route::get('/daftar-event/{event}/delete', 'EventController@destroy')->name('event.destroy');
 });
 
 // Home Landing Page
