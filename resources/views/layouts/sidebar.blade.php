@@ -10,34 +10,38 @@
 
         <hr class="horizontal dark mt-0" />
 
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Dashboard</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ request()->is('user') ? 'active' : '' }}" href="{{ route('user.index') }}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fas fa-users text-warning text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">User</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('daftar.event')}}">
-                    <div
-                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fas fa-calendar-alt text-success text-sm opacity-10"></i>
-                    </div>
-                    <span class="nav-link-text ms-1">Event</span>
-                </a>
-            </li>
-        </ul>
+        <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}"
+                        href="{{ route('dashboard') }}">
+                        <div
+                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('user') ? 'active' : '' }}" href="{{ route('user.index') }}">
+                        <div
+                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-users text-warning text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">User</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('daftar-event') ? 'active' : '' }}"
+                        href="{{ route('daftar.event') }}">
+                        <div
+                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-calendar-alt text-success text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Event</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </aside>

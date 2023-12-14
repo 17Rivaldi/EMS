@@ -1,7 +1,14 @@
 @extends('layouts.master')
 
+@section('breadcrumb-item')
+    <li class="breadcrumb-item text-white" aria-current="page">
+        <a href="{{ route('user.index') }}" class="text-white">User</a>
+    </li>
+    <li class="breadcrumb-item text-white active opacity-8" aria-current="page">Edit</li>
+@endsection
+
 @section('content')
-    <div class="row mt-4">
+    <div class="row mt-2">
         <div class="col-12">
             <div class="card">
                 <div class="card-header pb-0">
@@ -26,7 +33,12 @@
 
                         <div class="mb-3">
                             <label for="password" class="form-label">Password (Biarkan kosong jika tidak diubah)</label>
-                            <input type="password" class="form-control" id="password" name="password">
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password" name="password">
+                                <span class="input-group-text" id="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </span>
+                            </div>
                         </div>
 
                         <!-- Pemilihan peran (roles) menggunakan form select -->
@@ -64,4 +76,31 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('addCss')
+    <style>
+        .breadcrumb-item a:hover {
+            color: #e3e3e3 !important
+        }
+    </style>
+@endsection
+
+@section('addJs')
+    <script>
+        $(document).ready(function() {
+            $('#toggle-password').on('click', function() {
+                var passwordInput = $('#password');
+                var toggleIcon = $(this).find('i');
+
+                if (passwordInput.attr('type') === 'password') {
+                    passwordInput.attr('type', 'text');
+                    toggleIcon.removeClass('fa-eye').addClass('fa-eye-slash');
+                } else {
+                    passwordInput.attr('type', 'password');
+                    toggleIcon.removeClass('fa-eye-slash').addClass('fa-eye');
+                }
+            });
+        });
+    </script>
 @endsection
