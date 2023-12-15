@@ -26,11 +26,13 @@ class HomeController extends Controller
     public function index()
     {
         $events = Event::orderBy('event_date')->take(4)->get();
-        return view('web.home', ['events' => $events]);
+        $allevents = Event::all();
+        return view('web.home', ['events' => $events],['allevents' => $allevents] );
     }
 
     public function listEvent()
     {
-        return view('web.list-event');
+        $allevents = Event::all();
+        return view('web.list-event', ['allevents' => $allevents]);
     }
 }

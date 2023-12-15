@@ -237,9 +237,9 @@
                                         <h6>{{ $event->event_name }}</h6>
                                     </div>
                                     <div class="card-text">
-                                        <i class="bi bi-geo-alt"></i>{{ $event->event_location }}
+                                        <i class="bi bi-geo-alt"></i> &nbsp {{ $event->event_location }}
                                         <br>
-                                        <i class="bi bi-calendar"></i>{{ $event->event_date }}
+                                        <i class="bi bi-calendar"></i> $nbsp  {{ $event->event_date }}
                                     </div>
                                     <div class="card-footer mt-auto">
                                         Penyelenggara
@@ -283,9 +283,9 @@
                                             <h6>{{ $event->event_name }}</h6>
                                         </div>
                                         <div class="card-text">
-                                            <i class="bi bi-geo-alt"></i> {{ $event->event_location }}
+                                            <i class="bi bi-geo-alt"></i>&nbsp {{ $event->event_location }}
                                             <br>
-                                            <i class="bi bi-calendar"></i> {{ $event->event_date }}
+                                            <i class="bi bi-calendar"></i>&nbsp {{ $event->event_date }}
                                         </div>
                                         <div class="card-footer mt-auto">
                                             Penyelenggara
