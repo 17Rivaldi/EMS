@@ -224,23 +224,25 @@
     <section class="schedule-section section-padding" id="section_4">
         <div class="container">
         <!-- awal coba -->
+        
             <div class="col-12 text-center">
                 <h2 class="mb-4">Upcoming Event's</h1>
             </div>
-            <div id="myCarousel" class="carousel slide container gap-10" data-bs-ride="carousel">
+            <div id="myCarousel" class="carousel slide container gap-10" >
                 <div class="carousel-inner w-200">
+                @foreach ($events as $event)
                     <div class="carousel-item active">
                         <div class="col-md-3">
                             <a href="{{ route('detail') }}" style="color: black;">
                                 <div class="card card-body">
-                                    <img class="img-fluid" src="https://via.placeholder.com/640x360?text=1">
+                                    <img class="img-fluid" src="{{ asset('upload/' . $event->event_image) }}" style="width: 254px; height: 144px;">
                                     <div class="card-title">
-                                        <h6>Konser Metalica</h6>
+                                        <h6>{{ $event->event_name }}</h6>
                                     </div>
                                     <div class="card-text">
-                                        <i class="bi bi-geo-alt"></i> Jakarta
+                                        <i class="bi bi-geo-alt"></i>{{ $event->event_location }}
                                         <br>
-                                        <i class="bi bi-calendar"></i> 10 Januari 2024
+                                        <i class="bi bi-calendar"></i>{{ $event->event_date }}
                                     </div>
                                     <div class="card-footer mt-auto">
                                         Penyelenggara
@@ -249,155 +251,16 @@
                             </a>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="col-md-3">
-                            <a href="{{ route('detail') }}" style="color: black;">
-                                <div class="card card-body">
-                                    <img class="img-fluid" src="https://via.placeholder.com/640x360?text=2">
-                                    <div class="card-title">
-                                        <h6>Konser MetaliCa</h6>
-                                    </div>
-                                    <div class="card-text">
-                                        <i class="bi bi-geo-alt"></i> Jakarta
-                                        <br>
-                                        <i class="bi bi-calendar"></i> 10 Januari 2024
-                                    </div>
-                                    <div class="card-footer mt-auto">
-                                        Penyelenggara
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-3">
-                            <a href="{{ route('detail') }}" style="color: black;">
-                                <div class="card card-body">
-                                    <img class="img-fluid" src="https://via.placeholder.com/640x360?text=3">
-                                    <div class="card-title">
-                                        <h6>Konser MetaliCa</h6>
-                                    </div>
-                                    <div class="card-text">
-                                        <i class="bi bi-geo-alt"></i> Jakarta
-                                        <br>
-                                        <i class="bi bi-calendar"></i> 10 Januari 2024
-                                    </div>
-                                    <div class="card-footer mt-auto">
-                                        Penyelenggara
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-3">
-                            <a href="{{ route('detail') }}" style="color: black;">
-                                <div class="card card-body">
-                                    <img class="img-fluid" src="https://via.placeholder.com/640x360?text=4">
-                                    <div class="card-title">
-                                        <h6>Konser MetaliCa</h6>
-                                    </div>
-                                    <div class="card-text">
-                                        <i class="bi bi-geo-alt"></i> Jakarta
-                                        <br>
-                                        <i class="bi bi-calendar"></i> 10 Januari 2024
-                                    </div>
-                                    <div class="card-footer mt-auto">
-                                        Penyelenggara
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-3">
-                            <a href="{{ route('detail') }}" style="color: black;">
-                                <div class="card card-body">
-                                    <img class="img-fluid" src="https://via.placeholder.com/640x360?text=5">
-                                    <div class="card-title">
-                                        <h6>Konser MetaliCa</h6>
-                                    </div>
-                                    <div class="card-text">
-                                        <i class="bi bi-geo-alt"></i> Jakarta
-                                        <br>
-                                        <i class="bi bi-calendar"></i> 10 Januari 2024
-                                    </div>
-                                    <div class="card-footer mt-auto">
-                                        Penyelenggara
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-3">
-                            <a href="{{ route('detail') }}" style="color: black;">
-                                <div class="card card-body">
-                                    <img class="img-fluid" src="https://via.placeholder.com/640x360?text=6">
-                                    <div class="card-title">
-                                        <h6>Konser MetaliCa</h6>
-                                    </div>
-                                    <div class="card-text">
-                                        <i class="bi bi-geo-alt"></i> Jakarta
-                                        <br>
-                                        <i class="bi bi-calendar"></i> 10 Januari 2024
-                                    </div>
-                                    <div class="card-footer mt-auto">
-                                        Penyelenggara
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-3">
-                            <a href="{{ route('detail') }}" style="color: black;">
-                                <div class="card card-body">
-                                    <img class="img-fluid" src="https://via.placeholder.com/640x360?text=7">
-                                    <div class="card-title">
-                                        <h6>Konser MetaliCa</h6>
-                                    </div>
-                                    <div class="card-text">
-                                        <i class="bi bi-geo-alt"></i> Jakarta
-                                        <br>
-                                        <i class="bi bi-calendar"></i> 10 Januari 2024
-                                    </div>
-                                    <div class="card-footer mt-auto">
-                                        Penyelenggara
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-3">
-                            <a href="{{ route('detail') }}" style="color: black;">
-                                <div class="card card-body">
-                                    <img class="img-fluid" src="https://via.placeholder.com/640x360?text=8">
-                                    <div class="card-title">
-                                        <h6>Konser MetaliCa</h6>
-                                    </div>
-                                    <div class="card-text">
-                                        <i class="bi bi-geo-alt"></i> Jakarta
-                                        <br>
-                                        <i class="bi bi-calendar"></i> 10 Januari 2024
-                                    </div>
-                                    <div class="card-footer mt-auto">
-                                        Penyelenggara
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <!-- <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
-                </button>
+                </button> -->
             </div>
         <!-- akhir coba -->
         </div> 
@@ -413,18 +276,19 @@
 
                 <div id="list-event" class="carousel slide container gap-10" data-bs-ride="carousel">
                     <div class="carousel-inner w-200">
+                    @foreach ($events as $event)
                         <div class="carousel-item active">
                             <div class="col-md-3">
                                 <a href="{{ route('detail') }}" style="color: black;">
                                     <div class="card card-body">
-                                        <img class="img-fluid" src="https://via.placeholder.com/640x360?text=1">
+                                        <img class="img-fluid" src="{{ asset('upload/' . $event->event_image) }}" style="width: 254px; height: 144px;">
                                         <div class="card-title">
-                                            <h6>Konser Metalica</h6>
+                                            <h6>{{ $event->event_name }}</h6>
                                         </div>
                                         <div class="card-text">
-                                            <i class="bi bi-geo-alt"></i> Jakarta
+                                            <i class="bi bi-geo-alt"></i> {{ $event->event_location }}
                                             <br>
-                                            <i class="bi bi-calendar"></i> 10 Januari 2024
+                                            <i class="bi bi-calendar"></i> {{ $event->event_date }}
                                         </div>
                                         <div class="card-footer mt-auto">
                                             Penyelenggara
@@ -433,146 +297,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <a href="{{ route('detail') }}" style="color: black;">
-                                    <div class="card card-body">
-                                        <img class="img-fluid" src="https://via.placeholder.com/640x360?text=2">
-                                        <div class="card-title">
-                                            <h6>Konser MetaliCa</h6>
-                                        </div>
-                                        <div class="card-text">
-                                            <i class="bi bi-geo-alt"></i> Jakarta
-                                            <br>
-                                            <i class="bi bi-calendar"></i> 10 Januari 2024
-                                        </div>
-                                        <div class="card-footer mt-auto">
-                                            Penyelenggara
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <a href="{{ route('detail') }}" style="color: black;">
-                                    <div class="card card-body">
-                                        <img class="img-fluid" src="https://via.placeholder.com/640x360?text=3">
-                                        <div class="card-title">
-                                            <h6>Konser MetaliCa</h6>
-                                        </div>
-                                        <div class="card-text">
-                                            <i class="bi bi-geo-alt"></i> Jakarta
-                                            <br>
-                                            <i class="bi bi-calendar"></i> 10 Januari 2024
-                                        </div>
-                                        <div class="card-footer mt-auto">
-                                            Penyelenggara
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <a href="{{ route('detail') }}" style="color: black;">
-                                    <div class="card card-body">
-                                        <img class="img-fluid" src="https://via.placeholder.com/640x360?text=4">
-                                        <div class="card-title">
-                                            <h6>Konser MetaliCa</h6>
-                                        </div>
-                                        <div class="card-text">
-                                            <i class="bi bi-geo-alt"></i> Jakarta
-                                            <br>
-                                            <i class="bi bi-calendar"></i> 10 Januari 2024
-                                        </div>
-                                        <div class="card-footer mt-auto">
-                                            Penyelenggara
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <a href="{{ route('detail') }}" style="color: black;">
-                                    <div class="card card-body">
-                                        <img class="img-fluid" src="https://via.placeholder.com/640x360?text=5">
-                                        <div class="card-title">
-                                            <h6>Konser MetaliCa</h6>
-                                        </div>
-                                        <div class="card-text">
-                                            <i class="bi bi-geo-alt"></i> Jakarta
-                                            <br>
-                                            <i class="bi bi-calendar"></i> 10 Januari 2024
-                                        </div>
-                                        <div class="card-footer mt-auto">
-                                            Penyelenggara
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <a href="{{ route('detail') }}" style="color: black;">
-                                    <div class="card card-body">
-                                        <img class="img-fluid" src="https://via.placeholder.com/640x360?text=6">
-                                        <div class="card-title">
-                                            <h6>Konser MetaliCa</h6>
-                                        </div>
-                                        <div class="card-text">
-                                            <i class="bi bi-geo-alt"></i> Jakarta
-                                            <br>
-                                            <i class="bi bi-calendar"></i> 10 Januari 2024
-                                        </div>
-                                        <div class="card-footer mt-auto">
-                                            Penyelenggara
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <a href="{{ route('detail') }}" style="color: black;">
-                                    <div class="card card-body">
-                                        <img class="img-fluid" src="https://via.placeholder.com/640x360?text=7">
-                                        <div class="card-title">
-                                            <h6>Konser MetaliCa</h6>
-                                        </div>
-                                        <div class="card-text">
-                                            <i class="bi bi-geo-alt"></i> Jakarta
-                                            <br>
-                                            <i class="bi bi-calendar"></i> 10 Januari 2024
-                                        </div>
-                                        <div class="card-footer mt-auto">
-                                            Penyelenggara
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <a href="{{ route('detail') }}" style="color: black;">
-                                    <div class="card card-body">
-                                        <img class="img-fluid" src="https://via.placeholder.com/640x360?text=8">
-                                        <div class="card-title">
-                                            <h6>Konser MetaliCa</h6>
-                                        </div>
-                                        <div class="card-text">
-                                            <i class="bi bi-geo-alt"></i> Jakarta
-                                            <br>
-                                            <i class="bi bi-calendar"></i> 10 Januari 2024
-                                        </div>
-                                        <div class="card-footer mt-auto">
-                                            Penyelenggara
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#list-event"
                         data-bs-slide="prev">
@@ -585,7 +310,6 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-
             </div>
             <div class="col-lg-8 col-12 mx-auto mt-10">
                 <br>

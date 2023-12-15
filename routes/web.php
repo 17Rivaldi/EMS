@@ -15,7 +15,7 @@
 //     return redirect(route('login'));
 // });
 
-Route::get('/', function () {
+Route::get('/', 'HomeController@index', function () {
     return view('web.home');
 });
 

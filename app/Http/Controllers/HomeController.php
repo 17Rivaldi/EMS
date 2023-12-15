@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Event;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,12 +20,13 @@ class HomeController extends Controller
 
     /**
      * Show the application dashboard.
-     *
+     * @return \Illuminate\Http\Response
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
-        return view('web.home');
+        $events = Event::orderBy('event_date')->take(4)->get();
+        return view('web.home', ['events' => $events]);
     }
 
     public function listEvent()

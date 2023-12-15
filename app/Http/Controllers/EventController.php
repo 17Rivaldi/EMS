@@ -115,11 +115,22 @@ class EventController extends Controller
             'start_time' => 'required',
         ])->validate();
 
+        if ($request->hasFile('event_image')) {
+            $image = $request->file('event_image');
+            $name_img = date("YmdHis") . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path().'/upload/', $name_img);
+        }
+
         $event->event_name = $validatedData['event_name'];
         $event->description = $validatedData['description'];
         $event->event_location = $validatedData['event_location'];
         $event->event_date = $validatedData['event_date'];
         $event->start_time = $validatedData['start_time'];
+
+        if ($request->hasFile('event_image')) {
+            $event->event_image = $name_img;
+        }
+        
         $event->save();
 
         return redirect(route('daftar.event'))->with('success', 'Data Berhasil Di Update');
