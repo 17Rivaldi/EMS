@@ -273,7 +273,7 @@
 
                 <div id="list-event" class="carousel slide container gap-10" data-bs-ride="carousel">
                     <div class="carousel-inner w-200">
-                    @foreach ($events as $key => $event)
+                    @foreach ($allevents as $key => $event)
                         <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
                             <div class="col-md-3">
                                 <a href="{{ route('events.show', ['id' => $event->id]) }}" style="color: black;">
