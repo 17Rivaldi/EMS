@@ -26,12 +26,12 @@
         <div class="row">
         <div class="container mt-5">
     <div class="row">
-    @foreach ($event as $row)
+    @foreach ($allevents as $row)
 
         <!-- Card 1 -->
         <div class="col-md-3 mb-4">
             <div class="card card-body">
-                <img class="img-fluid" src="{{asset('upload/'.$row->event_image)}}">
+                <img class="img-fluid" src="{{ asset('upload/' . $row->event_image) }}" style="width: 300px; height: 150px;">
                 <div class="card-title">    
                     <h6>{{$row->event_name}}</h6>
                 </div>
