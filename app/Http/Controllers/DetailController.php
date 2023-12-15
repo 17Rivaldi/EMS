@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Event;
 
 class DetailController extends Controller
 {
     public function index()
     {
-        return view('web.detail');
+        $event=Event::all();
+        return view('web.detail', compact('event'));
     }
 }

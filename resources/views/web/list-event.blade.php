@@ -26,150 +26,27 @@
         <div class="row">
         <div class="container mt-5">
     <div class="row">
+    @foreach ($event as $row)
+
         <!-- Card 1 -->
         <div class="col-md-3 mb-4">
             <div class="card card-body">
-                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=1">
+                <img class="img-fluid" src="{{asset('upload/'.$row->event_image)}}">
                 <div class="card-title">    
-                    <h6>Konser Metalica</h6>
+                    <h6>{{$row->event_name}}</h6>
                 </div>
                 <div class="card-text">
-                    <i class="bi bi-geo-alt"></i> Jakarta
+                    <i class="bi bi-geo-alt"></i> {{$row->event_location}}
                     <br>
-                    <i class="bi bi-calendar"></i> 10 Januari 2024
+                    <i class="bi bi-calendar"></i> {{$row->event_date}}
                 </div>
                 <div class="card-footer mt-auto">
                     Penyelenggara
                 </div>
             </div>
         </div>
-
-        <!-- Card 2 -->
-        <div class="col-md-3 mb-4">
-            <div class="card card-body">
-                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=1">
-                <div class="card-title">    
-                    <h6>Konser Metalica</h6>
-                </div>
-                <div class="card-text">
-                    <i class="bi bi-geo-alt"></i> Jakarta
-                    <br>
-                    <i class="bi bi-calendar"></i> 10 Januari 2024
-                </div>
-                <div class="card-footer mt-auto">
-                    Penyelenggara
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="col-md-3 mb-4">
-            <div class="card card-body">
-                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=1">
-                <div class="card-title">    
-                    <h6>Konser Metalica</h6>
-                </div>
-                <div class="card-text">
-                    <i class="bi bi-geo-alt"></i> Jakarta
-                    <br>
-                    <i class="bi bi-calendar"></i> 10 Januari 2024
-                </div>
-                <div class="card-footer mt-auto">
-                    Penyelenggara
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="col-md-3 mb-4">
-            <div class="card card-body">
-                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=1">
-                <div class="card-title">    
-                    <h6>Konser Metalica</h6>
-                </div>
-                <div class="card-text">
-                    <i class="bi bi-geo-alt"></i> Jakarta
-                    <br>
-                    <i class="bi bi-calendar"></i> 10 Januari 2024
-                </div>
-                <div class="card-footer mt-auto">
-                    Penyelenggara
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="col-md-3 mb-4">
-            <div class="card card-body">
-                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=1">
-                <div class="card-title">    
-                    <h6>Konser Metalica</h6>
-                </div>
-                <div class="card-text">
-                    <i class="bi bi-geo-alt"></i> Jakarta
-                    <br>
-                    <i class="bi bi-calendar"></i> 10 Januari 2024
-                </div>
-                <div class="card-footer mt-auto">
-                    Penyelenggara
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="col-md-3 mb-4">
-            <div class="card card-body">
-                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=1">
-                <div class="card-title">    
-                    <h6>Konser Metalica</h6>
-                </div>
-                <div class="card-text">
-                    <i class="bi bi-geo-alt"></i> Jakarta
-                    <br>
-                    <i class="bi bi-calendar"></i> 10 Januari 2024
-                </div>
-                <div class="card-footer mt-auto">
-                    Penyelenggara
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 7 -->
-        <div class="col-md-3 mb-4">
-            <div class="card card-body">
-                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=1">
-                <div class="card-title">    
-                    <h6>Konser Metalica</h6>
-                </div>
-                <div class="card-text">
-                    <i class="bi bi-geo-alt"></i> Jakarta
-                    <br>
-                    <i class="bi bi-calendar"></i> 10 Januari 2024
-                </div>
-                <div class="card-footer mt-auto">
-                    Penyelenggara
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 8 -->
-        <div class="col-md-3 mb-4">
-            <div class="card card-body">
-                <img class="img-fluid" src="https://via.placeholder.com/640x360?text=1">
-                <div class="card-title">    
-                    <h6>Konser Metalica</h6>
-                </div>
-                <div class="card-text">
-                    <i class="bi bi-geo-alt"></i> Jakarta
-                    <br>
-                    <i class="bi bi-calendar"></i> 10 Januari 2024
-                </div>
-                <div class="card-footer mt-auto">
-                    Penyelenggara
-                </div>
-            </div>
-        </div>
-    </div>
+        
+    @endforeach
 
     <!-- Pagination -->
     <nav aria-label="Page navigation">

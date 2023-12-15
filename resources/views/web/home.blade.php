@@ -8,7 +8,7 @@
             <div class="row">
 
                 <div class="col-12 mt-auto mb-5 text-center">
-                    <small>Festava Live Presents</small>
+                    <small>Ipeun Live Presents</small>
 
                     <h1 class="text-white mb-5">Night Live 2023</h1>
 
@@ -19,14 +19,14 @@
                     <div class="date-wrap">
                         <h5 class="text-white">
                             <i class="custom-icon bi-clock me-2"></i>
-                            10 - 12<sup>th</sup>, Dec 2023
+                            30 - 31<sup>th</sup>, Dec 2023
                         </h5>
                     </div>
 
                     <div class="location-wrap mx-auto py-3 py-lg-0">
                         <h5 class="text-white">
                             <i class="custom-icon bi-geo-alt me-2"></i>
-                            National Center, United States
+                            Bandung City Square
                         </h5>
                     </div>
 
@@ -72,20 +72,17 @@
 
                 <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
                     <div class="services-info">
-                        <h2 class="text-white mb-4">About Festava 2022</h2>
+                        <h2 class="text-white mb-4">About Ipeun</h2>
 
-                        <p class="text-white">Festava Live is free CSS template provided by TemplateMo website.
-                            This
-                            layout is built on Bootstrap v5.2.2 CSS library. You are free to use this template for
-                            your commercial website.</p>
+                        <p class="text-white">Ipeun is a sales website that offers various concert tickets in Indonesia and also 
+                        makes purchasing tickets easier.</p>
 
-                        <h6 class="text-white mt-4">Once in Lifetime Experience</h6>
+                        <h6 class="text-white mt-4">What is Ipeun Live Present?</h6>
 
-                        <p class="text-white">You are not allowed to redistribute the template ZIP file on any
-                            other
-                            website without a permission.</p>
+                        <p class="text-white">Ipeun Live Presentis a new year celebration event leading up to 2024 with a very unique 
+                        experience that will be felt when participating in the event.</p>
 
-                        <h6 class="text-white mt-4">Whole Night Party</h6>
+                        <h6 class="text-white mt-4">Come Jioin Us At Ipeun Live Present</h6>
 
                         <p class="text-white">Please tell your friends about our website. Thank you.</p>
                     </div>
@@ -125,81 +122,19 @@
                 <div class="col-lg-5 col-12">
                     <div class="artists-thumb">
                         <div class="artists-image-wrap">
-                            <img src="{{ asset('img/web/artists/joecalih-UmTZqmMvQcw-unsplash.jpg') }}"
+                            <img src="{{ asset('img/web/artists/Tiara_Andini.jpg') }}"
                                 class="artists-image img-fluid">
                         </div>
 
                         <div class="artists-hover">
                             <p>
                                 <strong>Name:</strong>
-                                Madona
+                                Tiara Andini
                             </p>
 
                             <p>
                                 <strong>Birthdate:</strong>
-                                August 16, 1958
-                            </p>
-
-                            <p>
-                                <strong>Music:</strong>
-                                Pop, R&amp;B
-                            </p>
-
-                            <hr>
-
-                            <p class="mb-0">
-                                <strong>Youtube Channel:</strong>
-                                <a href="#">Madona Official</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-5 col-12">
-                    <div class="artists-thumb">
-                        <div class="artists-image-wrap">
-                            <img src="{{ asset('img/web/artists/abstral-official-bdlMO9z5yco-unsplash.jpg') }}"
-                                class="artists-image img-fluid">
-                        </div>
-
-                        <div class="artists-hover">
-                            <p>
-                                <strong>Name:</strong>
-                                Rihana
-                            </p>
-
-                            <p>
-                                <strong>Birthdate:</strong>
-                                Feb 20, 1988
-                            </p>
-
-                            <p>
-                                <strong>Music:</strong>
-                                Country
-                            </p>
-
-                            <hr>
-
-                            <p class="mb-0">
-                                <strong>Youtube Channel:</strong>
-                                <a href="#">Rihana Official</a>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="artists-thumb">
-                        <img src="{{ asset('img/web/artists/soundtrap-rAT6FJ6wltE-unsplash.jpg') }}"
-                            class="artists-image img-fluid">
-
-                        <div class="artists-hover">
-                            <p>
-                                <strong>Name:</strong>
-                                Bruno Bros
-                            </p>
-
-                            <p>
-                                <strong>Birthdate:</strong>
-                                October 8, 1985
+                                Sept 16, 2001
                             </p>
 
                             <p>
@@ -211,7 +146,69 @@
 
                             <p class="mb-0">
                                 <strong>Youtube Channel:</strong>
-                                <a href="#">Bruno Official</a>
+                                <a href="#">Tiara Andini</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-12">
+                    <div class="artists-thumb">
+                        <div class="artists-image-wrap">
+                            <img src="{{ asset('img/web/artists/rizky febian.jpg') }}"
+                                class="artists-image img-fluid">
+                        </div>
+
+                        <div class="artists-hover">
+                            <p>
+                                <strong>Name:</strong>
+                                Rizky Febian
+                            </p>
+
+                            <p>
+                                <strong>Birthdate:</strong>
+                                Feb 25, 1998
+                            </p>
+
+                            <p>
+                                <strong>Music:</strong>
+                                Pop
+                            </p>
+
+                            <hr>
+
+                            <p class="mb-0">
+                                <strong>Youtube Channel:</strong>
+                                <a href="#">Rizky Febian</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="artists-thumb">
+                        <img src="{{ asset('img/web/artists/aldi taher.jpg') }}"
+                            class="artists-image img-fluid">
+
+                        <div class="artists-hover">
+                            <p>
+                                <strong>Name:</strong>
+                                Aldi Taher
+                            </p>
+
+                            <p>
+                                <strong>Birthdate:</strong>
+                                October 25, 1983
+                            </p>
+
+                            <p>
+                                <strong>Music:</strong>
+                                All gendre
+                            </p>
+
+                            <hr>
+
+                            <p class="mb-0">
+                                <strong>Youtube Channel:</strong>
+                                <a href="#">Aldi Taher Official</a>
                             </p>
                         </div>
                     </div>
@@ -377,7 +374,7 @@
                         <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel"
                             aria-labelledby="nav-ContactMap-tab">
                             <iframe class="google-map"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29974.469402870927!2d120.94861466021855!3d14.106066818082482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd777b1ab54c8f%3A0x6ecc514451ce2be8!2sTagaytay%2C%20Cavite%2C%20Philippines!5e1!3m2!1sen!2smy!4v1670344209509!5m2!1sen!2smy"
+                                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=alun%20alun%20bandung+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                                 width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                             <!-- You can easily copy the embed code from Google Maps -> Share -> Embed a map // -->
