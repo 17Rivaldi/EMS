@@ -30,6 +30,7 @@
 
         <!-- Card 1 -->
         <div class="col-md-3 mb-4">
+            <a href="{{ route('events.show', ['id' => $row->id]) }}" style="color: black;">
             <div class="card card-body">
                 <img class="img-fluid" src="{{ asset('upload/' . $row->event_image) }}" style="width: 300px; height: 150px;">
                 <div class="card-title">    
@@ -44,6 +45,7 @@
                     Penyelenggara
                 </div>
             </div>
+            </a>
         </div>
         
     @endforeach

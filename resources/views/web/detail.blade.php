@@ -9,32 +9,28 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">Events</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Tau Tau Fest</li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ $event->event_name }}</li>
                     </ol>
                 </nav>
-                @foreach ($event as $row )
 
                 <div class="d-flex col-lg-8 event-detail-banner justify-items-center">
-                    <img src="{{asset('upload/'.$row->event_image)}}" alt="Gambar"
-                        class="img-fluid rounded-3 mx-auto">
+                    <img src="{{ asset('upload/' . $event->event_image) }}" alt="Gambar" class="img-fluid rounded-3 mx-auto">
                 </div>
-                    
-
 
                 <div class="d-flex col-lg-4 event-detail-info mt-2 align-items-center">
                     <div class="card border-0 mb-3 shadow w-100" style="padding: 18px; border-radius: 16px;">
                         <div class="card-header bg-transparent border-0">
-                            <h6>{{$row->event_name}}</h6>
+                            <h6>{{ $event->event_name }}</h6>
                             <hr>
                         </div>
                         <div class="card-body">
-                            <p><i class="bi bi-calendar-week me-2 text-primary"></i><label>{{$row->event_date}}</label></p>
-                            <p><i class="bi bi-clock me-2 text-primary"></i><label>{{$row->start_time}}</label></p>
-                            <p><i class="bi bi-geo-alt me-2 text-primary"></i><label>{{$row->event_location}}</label></p>
+                            <p><i class="bi bi-calendar-week me-2 text-primary"></i><label>{{ $event->event_date }}</label></p>
+                            <p><i class="bi bi-clock me-2 text-primary"></i><label>{{ $event->start_time }}</label></p>
+                            <p><i class="bi bi-geo-alt me-2 text-primary"></i><label>{{ $event->event_location }}</label></p>
                         </div>
                         <div class="card-footer bg-transparent border-0">
                             <div class="d-grid gap-2">
-                            <a href="{{ route('form-pembayaran') }}" class="btn btn-primary btn-beli-tiket" type="button">Beli Tiket</a>
+                                <a href="{{ route('form-pembayaran') }}" class="btn btn-primary btn-beli-tiket" type="button">Beli Tiket</a>
                             </div>
                         </div>
                     </div>
@@ -43,18 +39,10 @@
                 <div class="col-lg-8 event-detail-description mt-3">
                     <p class="title">
                         <strong>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, nihil
-                            aspernatur ut nostrum
-                            sed veniam dolorum reiciendis illo repellat quis voluptatum dolore odit eum laudantium a saepe
-                            est unde deserunt!
+                        {{ $event->description }}
                         </strong>
                     </p>
-                    <p>
-                        {{$row->description}}
-                    </p>
-                    <hr>
                 </div>
-                @endforeach
             </div>
 
         </div>

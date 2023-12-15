@@ -57,11 +57,13 @@ Route::middleware('role:admin')->group(function () {
 // Home Landing Page
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/events/{id}', 'EventController@show')->name('events.show');
+
 //routes ke halaman daftar event
 Route::get('/list-event', 'HomeController@ListEvent')->name('list-event');
 
 // Detail Event
-Route::get('/detail', 'DetailController@index')->name('detail');
+// Route::get('/detail', 'DetailController@index')->name('detail');
 
 Route::get('/form-pembayaran', 'FormpembayaranController@index')->name('form-pembayaran');
 

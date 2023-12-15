@@ -82,7 +82,12 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        //
+        $event = Event::find($id);
+        if (!$event) {
+            return abort(404); // Atau atur respons lainnya jika event tidak ditemukan
+        }
+
+        return view('web.detail', compact('event'));
     }
 
     /**
@@ -130,7 +135,7 @@ class EventController extends Controller
         if ($request->hasFile('event_image')) {
             $event->event_image = $name_img;
         }
-        
+
         $event->save();
 
         return redirect(route('daftar.event'))->with('success', 'Data Berhasil Di Update');

@@ -227,10 +227,10 @@
             </div>
             <div id="myCarousel" class="carousel slide container gap-10" >
                 <div class="carousel-inner w-200">
-                @foreach ($events as $event)
-                    <div class="carousel-item active">
+                @foreach ($events as $key => $event)
+                    <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
                         <div class="col-md-3">
-                            <a href="{{ route('detail') }}" style="color: black;">
+                            <a href="{{route('events.show', ['id' => $event->id]) }}" style="color: black;">
                                 <div class="card card-body">
                                     <img class="img-fluid" src="{{ asset('upload/' . $event->event_image) }}" style="width: 254px; height: 144px;">
                                     <div class="card-title">
@@ -273,10 +273,10 @@
 
                 <div id="list-event" class="carousel slide container gap-10" data-bs-ride="carousel">
                     <div class="carousel-inner w-200">
-                    @foreach ($events as $event)
-                        <div class="carousel-item active">
+                    @foreach ($events as $key => $event)
+                        <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
                             <div class="col-md-3">
-                                <a href="{{ route('detail') }}" style="color: black;">
+                                <a href="{{ route('events.show', ['id' => $event->id]) }}" style="color: black;">
                                     <div class="card card-body">
                                         <img class="img-fluid" src="{{ asset('upload/' . $event->event_image) }}" style="width: 254px; height: 144px;">
                                         <div class="card-title">
