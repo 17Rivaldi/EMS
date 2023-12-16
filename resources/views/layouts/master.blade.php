@@ -65,6 +65,8 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <!-- CK Editor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
 
     @yield('addJs')
 </body>

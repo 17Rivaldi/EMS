@@ -9,7 +9,7 @@
 
 @section('content')
     {{-- Main Content --}}
-    <div class="content-header">
+    {{-- <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-0">
                 <div class="col-sm-6">
@@ -24,14 +24,14 @@
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
-    </div>
+    </div> --}}
 
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4">
-                    <div class="card-header pb-0">
-                        <h6>Form Event</h6>
+                    <div class="card-header pb-0 text-center">
+                        <h4>Form Tambah Event</h4>
                     </div>
                     <div class="card-body px-4 pt-4 pb-2">
                         <form action="{{ route('event.store') }}" method="post" enctype="multipart/form-data">
@@ -42,7 +42,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="description" class="form-label">Deskripsi</label>
-                                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                                <textarea class="form-control ckeditor" id="description" name="description" rows="3"></textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="event_location" class="form-label">Lokasi</label>
@@ -73,12 +73,57 @@
 
 @section('addCss')
     <style>
-
+        .breadcrumb-item a:hover {
+            color: #e3e3e3 !important
+        }
     </style>
 @endsection
 
 @section('addJs')
     <script>
+        ClassicEditor
+            .create(document.querySelector('.ckeditor'), {
+                required: true,
+                toolbar: {
+                    items: ['undo', 'redo', '|', 'heading', '|', 'bold', 'italic', '|', 'bulletedList', 'numberedList',
+                        '|', 'outdent', 'indent'
+                    ]
+                }
+            })
+            .then(editor => {
+                editor.editing.view.change(writer => {
+                    const toolbarElement = editor.ui.view.toolbar.element;
+                    const editorElement = editor.ui.view.editable.element;
+
+                    writer.setStyle('height', 'auto', editor.editing.view.document.getRoot());
+                    writer.setStyle('border-bottom-left-radius', '10px', editor.editing.view.document
+                        .getRoot());
+                    writer.setStyle('border-bottom-right-radius', '10px', editor.editing.view.document
+                        .getRoot());
+
+                    // Set border radius dengan nilai berbeda untuk setiap ujung pada toolbar
+                    toolbarElement.style.borderTopLeftRadius = '10px';
+                    toolbarElement.style.borderTopRightRadius = '10px';
+                    toolbarElement.style.borderBottomLeftRadius = '0';
+                    toolbarElement.style.borderBottomRightRadius = '0';
+
+                    editor.ui.focusTracker.on('change:isFocused', (eventInfo, name, value) => {
+                        if (value) {
+                            editorElement.style.height = 'auto';
+                            editorElement.style.borderBottomLeftRadius = '10px';
+                            editorElement.style.borderBottomRightRadius = '10px';
+                        } else {
+                            editorElement.style.height = 'auto';
+                            editorElement.style.borderBottomRightRadius = '10px';
+                            editorElement.style.borderBottomLeftRadius = '10px';
+                        }
+                    });
+                });
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
         $(document).ready(function() {
             $('#event_name').focus();
         })

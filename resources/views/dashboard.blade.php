@@ -33,7 +33,7 @@
                                 <p class="text-sm mb-0 text-uppercase font-weight-bold">
                                     Total Event
                                 </p>
-                                <h5 class="font-weight-bolder">75</h5>
+                                <h5 class="font-weight-bolder">{{ $totalEvents }}</h5>
                             </div>
                         </div>
                         <div class="col-4 text-end">

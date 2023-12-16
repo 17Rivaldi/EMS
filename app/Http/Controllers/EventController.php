@@ -43,32 +43,32 @@ class EventController extends Controller
         //     'event_date' => 'required',
         //     'start_time' => 'required',
         // ];
-    
+
         // if ($request->hasFile('event_image')) {
         //     $rules['event_image'] = 'image|mimes:jpeg,png,jpg,gif|max:2048';
         // }
-    
+
         // $request->validate($rules);
-    
+
         if ($request->hasFile('event_image')) {
             $image = $request->file('event_image');
             $name_img = date("YmdHis") . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path().'/upload/', $name_img);
+            $image->move(public_path() . '/upload/', $name_img);
         }
-    
+
         $event = new Event;
         $event->event_name = $request->event_name;
         $event->description = $request->description;
         $event->event_location = $request->event_location;
         $event->event_date = $request->event_date;
         $event->start_time = $request->start_time;
-    
+
         if ($request->hasFile('event_image')) {
             $event->event_image = $name_img;
         }
 
         if ($event->save()) {
-            return redirect()->route('daftar.event')->with('success', 'oke');
+            return redirect()->route('daftar.event')->with('success', 'Event berhasil di buat');
         } else {
             return redirect()->back()->withInput()->with('error', 'Gagal menyimpan event. Silakan coba lagi.');
         }
@@ -123,7 +123,7 @@ class EventController extends Controller
         if ($request->hasFile('event_image')) {
             $image = $request->file('event_image');
             $name_img = date("YmdHis") . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path().'/upload/', $name_img);
+            $image->move(public_path() . '/upload/', $name_img);
         }
 
         $event->event_name = $validatedData['event_name'];

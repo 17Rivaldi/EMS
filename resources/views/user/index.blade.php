@@ -37,7 +37,7 @@
                                                 {{ $role->name }}
                                             @endforeach
                                         </td>
-                                        <td>{{ $user->created_at }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($user->created_at)->format('H:i:s | d-m-Y') }}</td>
                                         <td><a class="btn btn-primary text-xs my-auto"
                                                 href="{{ route('users.edit', $user->id) }}" role="button"><i
                                                     class="fas fa-edit me-1"></i>Edit</a>
@@ -87,6 +87,10 @@
 
         .dataTables_length select:hover {
             border: 1px solid blue;
+        }
+
+        .breadcrumb-item a:hover {
+            color: #e3e3e3 !important
         }
     </style>
 @endsection

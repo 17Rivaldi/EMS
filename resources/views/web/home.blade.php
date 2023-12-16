@@ -74,13 +74,15 @@
                     <div class="services-info">
                         <h2 class="text-white mb-4">About Ipeun</h2>
 
-                        <p class="text-white">Ipeun is a sales website that offers various concert tickets in Indonesia and also 
-                        makes purchasing tickets easier.</p>
+                        <p class="text-white">Ipeun is a sales website that offers various concert tickets in Indonesia and
+                            also
+                            makes purchasing tickets easier.</p>
 
                         <h6 class="text-white mt-4">What is Ipeun Live Present?</h6>
 
-                        <p class="text-white">Ipeun Live Presentis a new year celebration event leading up to 2024 with a very unique 
-                        experience that will be felt when participating in the event.</p>
+                        <p class="text-white">Ipeun Live Presentis a new year celebration event leading up to 2024 with a
+                            very unique
+                            experience that will be felt when participating in the event.</p>
 
                         <h6 class="text-white mt-4">Come Jioin Us At Ipeun Live Present</h6>
 
@@ -122,8 +124,7 @@
                 <div class="col-lg-5 col-12">
                     <div class="artists-thumb">
                         <div class="artists-image-wrap">
-                            <img src="{{ asset('img/web/artists/Tiara_Andini.jpg') }}"
-                                class="artists-image img-fluid">
+                            <img src="{{ asset('img/web/artists/Tiara_Andini.jpg') }}" class="artists-image img-fluid">
                         </div>
 
                         <div class="artists-hover">
@@ -155,8 +156,7 @@
                 <div class="col-lg-5 col-12">
                     <div class="artists-thumb">
                         <div class="artists-image-wrap">
-                            <img src="{{ asset('img/web/artists/rizky febian.jpg') }}"
-                                class="artists-image img-fluid">
+                            <img src="{{ asset('img/web/artists/rizky febian.jpg') }}" class="artists-image img-fluid">
                         </div>
 
                         <div class="artists-hover">
@@ -185,8 +185,7 @@
                     </div>
 
                     <div class="artists-thumb">
-                        <img src="{{ asset('img/web/artists/aldi taher.jpg') }}"
-                            class="artists-image img-fluid">
+                        <img src="{{ asset('img/web/artists/aldi taher.jpg') }}" class="artists-image img-fluid">
 
                         <div class="artists-hover">
                             <p>
@@ -220,47 +219,55 @@
 
     <section class="schedule-section section-padding" id="section_4">
         <div class="container">
-        <!-- awal coba -->
-        
+            <!-- awal coba -->
+
             <div class="col-12 text-center">
                 <h2 class="mb-4">Upcoming Event's</h1>
             </div>
-            <div id="myCarousel" class="carousel slide container gap-10" >
+            <div id="myCarousel" class="carousel slide container gap-10">
                 <div class="carousel-inner w-200">
-                @foreach ($events as $key => $event)
-                    <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
-                        <div class="col-md-3">
-                            <a href="{{route('events.show', ['id' => $event->id]) }}" style="color: black;">
-                                <div class="card card-body">
-                                    <img class="img-fluid" src="{{ asset('upload/' . $event->event_image) }}" style="width: 254px; height: 144px;">
-                                    <div class="card-title">
-                                        <h6>{{ $event->event_name }}</h6>
+                    @foreach ($events as $key => $event)
+                        <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
+                            <div class="col-md-3">
+                                <a href="{{ route('events.show', ['id' => $event->id]) }}" style="color: black;">
+                                    <div class="card">
+                                        <img class="img-fluid rounded-top"
+                                            src="{{ asset('upload/' . $event->event_image) }}"
+                                            style="width: 254px; height: 144px;">
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <h6 style="color: #494A4A !important">{{ $event->event_name }}</h6>
+                                            </div>
+                                            <div class="card-text text-secondary my-4">
+                                                <div>
+                                                    <i class="bi bi-geo-alt me-2"></i>{{ $event->event_location }}
+                                                </div>
+                                                <div class="text-secondary">
+                                                    <i class="bi bi-calendar me-2"></i>
+                                                    {{ \Carbon\Carbon::parse($event->event_date)->formatLocalized('%d-%m-%Y') }}
+                                                </div>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                Penyelenggara
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="card-text">
-                                        <i class="bi bi-geo-alt"></i> &nbsp {{ $event->event_location }}
-                                        <br>
-                                        <i class="bi bi-calendar"></i> $nbsp  {{ $event->event_date }}
-                                    </div>
-                                    <div class="card-footer mt-auto">
-                                        Penyelenggara
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
-                <!-- <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                {{-- <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
-                </button> -->
+                </button> --}}
             </div>
-        <!-- akhir coba -->
-        </div> 
+            <!-- akhir coba -->
+        </div>
     </section>
 
     <section class="pricing-section section-padding section-bg" id="section_5">
@@ -273,27 +280,35 @@
 
                 <div id="list-event" class="carousel slide container gap-10" data-bs-ride="carousel">
                     <div class="carousel-inner w-200">
-                    @foreach ($allevents as $key => $event)
-                        <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
-                            <div class="col-md-3">
-                                <a href="{{ route('events.show', ['id' => $event->id]) }}" style="color: black;">
-                                    <div class="card card-body">
-                                        <img class="img-fluid" src="{{ asset('upload/' . $event->event_image) }}" style="width: 254px; height: 144px;">
-                                        <div class="card-title">
-                                            <h6>{{ $event->event_name }}</h6>
+                        @foreach ($allevents as $key => $event)
+                            <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
+                                <div class="col-md-3">
+                                    <a href="{{ route('events.show', ['id' => $event->id]) }}" style="color: black;">
+                                        <div class="card">
+                                            <img class="img-fluid rounded-top"
+                                                src="{{ asset('upload/' . $event->event_image) }}"
+                                                style="width: 254px; height: 144px;">
+                                            <div class="card-body">
+                                                <div class="card-title">
+                                                    <h6 style="color: #494A4A !important">{{ $event->event_name }}</h6>
+                                                </div>
+                                                <div class="card-text text-secondary my-4">
+                                                    <div>
+                                                        <i class="bi bi-geo-alt me-2"></i>{{ $event->event_location }}
+                                                    </div>
+                                                    <div>
+                                                        <i class="bi bi-calendar me-2"></i>
+                                                        {{ \Carbon\Carbon::parse($event->event_date)->formatLocalized('%d-%m-%Y') }}
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-white">
+                                                    Penyelenggara
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="card-text">
-                                            <i class="bi bi-geo-alt"></i>&nbsp {{ $event->event_location }}
-                                            <br>
-                                            <i class="bi bi-calendar"></i>&nbsp {{ $event->event_date }}
-                                        </div>
-                                        <div class="card-footer mt-auto">
-                                            Penyelenggara
-                                        </div>
-                                    </div>
-                                </a>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#list-event"
