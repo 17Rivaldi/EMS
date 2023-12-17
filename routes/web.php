@@ -59,6 +59,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/events/{id}', 'EventController@show')->name('events.show');
 
+Route::get('/events/{id}/form-pembayaran', 'FormpembayaranController@show')->name('form-pembayaran.show');
+
+
 //routes ke halaman daftar event
 Route::get('/list-event', 'HomeController@ListEvent')->name('list-event');
 

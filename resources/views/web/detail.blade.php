@@ -36,7 +36,7 @@
                         </div>
                         <div class="card-footer bg-transparent border-0">
                             <div class="d-grid gap-2">
-                                <a href="{{ route('form-pembayaran') }}" class="btn btn-primary btn-beli-tiket"
+                                <a href="{{ route('form-pembayaran.show', $event->id) }}" class="btn btn-primary btn-beli-tiket"
                                     type="button">Beli Tiket</a>
                             </div>
                         </div>

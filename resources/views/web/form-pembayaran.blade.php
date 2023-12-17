@@ -8,21 +8,21 @@
             <div class="col-lg-8">
                 <div class="event-card">
                     <div class="card-body">
-                        <img src="https://via.placeholder.com/640x360?text=Example" class="card-img-top" alt="Gambar">
+                        <img src="{{ asset('upload/' . $event->event_image) }}" class="card-img-top" alt="Gambar">
                         <div>
-                            <div class="event-title">Konser Metalica</div>
+                            <div class="event-title">{{ $event->event_name }}</div>
                             <div class="event-info">
                                 <div class="event-date">
                                     <i class="bi bi-calendar-week text-primary"></i>
-                                    <label id="date-event">10 Januari 2024</label>
+                                    <label id="date-event">{{ \Carbon\Carbon::parse($event->event_date)->formatLocalized('%d %B %Y') }}</label>
                                 </div>
                                 <div class="event-time">
                                     <i class="bi bi-clock text-primary"></i>
-                                    <label id="time-event">17:00 - 21:00 WIB</label>
+                                    <label id="time-event">{{ \Carbon\Carbon::parse($event->start_time)->format('H:i') }}</label>
                                 </div>
                                 <div class="event-venue">
                                     <i class="bi bi-geo-alt text-primary"></i>
-                                    <label>Jakarta</label>
+                                    <label>{{ $event->event_location }}</label>
                                 </div>
                                 <hr style="margin-top: 15px; margin-bottom: 5px;">
                                 <div class="event-price">
