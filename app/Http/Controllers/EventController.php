@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class EventController extends Controller
 {
@@ -62,6 +63,7 @@ class EventController extends Controller
         $event->event_location = $request->event_location;
         $event->event_date = $request->event_date;
         $event->start_time = $request->start_time;
+        $event->ticket_price = $request->ticket_price;
 
         if ($request->hasFile('event_image')) {
             $event->event_image = $name_img;
@@ -118,6 +120,7 @@ class EventController extends Controller
             'event_location' => 'required',
             'event_date' => 'required',
             'start_time' => 'required',
+            'ticket_price' => 'required',
         ])->validate();
 
         if ($request->hasFile('event_image')) {
@@ -131,6 +134,7 @@ class EventController extends Controller
         $event->event_location = $validatedData['event_location'];
         $event->event_date = $validatedData['event_date'];
         $event->start_time = $validatedData['start_time'];
+        $event->ticket_price = $validatedData['ticket_price'];
 
         if ($request->hasFile('event_image')) {
             $event->event_image = $name_img;
@@ -149,6 +153,12 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
+        // Hapus file gambar dari folder public/upload
+        $imagePath = public_path('upload/' . $event->event_image);
+        if (File::exists($imagePath)) {
+            File::delete($imagePath);
+        }
+
         $event->delete();
         return redirect(route('daftar.event'))->with('success', 'Data berhasil dihapus');
     }

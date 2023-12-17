@@ -15,5 +15,6 @@ class Event extends Model
         'event_location',
         'description',
         'event_image',
+        'ticket_price',
     ];
 }

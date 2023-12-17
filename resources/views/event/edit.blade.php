@@ -45,6 +45,11 @@
                                     value="{{ old('start_time', $event->start_time) }}" required>
                             </div>
                             <div class="mb-3">
+                                <label for="ticket_price" class="form-label">Harga Tiket</label>
+                                <input type="number" class="form-control" id="ticket_price" name="ticket_price"
+                                    value="{{ old('ticket_price', $event->ticket_price) }}" required>
+                            </div>
+                            <div class="mb-3">
                                 <label for="event_image" class="form-label">Gambar Event</label>
                                 @if ($event->event_image)
                                     <!-- Menampilkan gambar saat ini jika ada -->

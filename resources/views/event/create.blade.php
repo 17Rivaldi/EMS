@@ -58,6 +58,10 @@
                                 <input type="time" class="form-control" id="start_time" name="start_time" required>
                             </div>
                             <div class="mb-3">
+                                <label for="ticket_price" class="form-label">Harga Tiket</label>
+                                <input type="number" class="form-control" id="ticket_price" name="ticket_price" required>
+                            </div>
+                            <div class="mb-3">
                                 <label for="event_image" class="form-label">Gambar Event</label>
                                 <input type="file" class="form-control" id="event_image" name="event_image">
                             </div>

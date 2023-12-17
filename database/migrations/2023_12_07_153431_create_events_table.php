@@ -22,6 +22,7 @@ class CreateEventsTable extends Migration
             $table->date('event_date');
             $table->time('start_time');
             $table->string('event_image', 255);
+            $table->unsignedBigInteger('ticket_price')->default(0);
         });
     }
     /**
