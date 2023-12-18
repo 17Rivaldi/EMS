@@ -107,6 +107,11 @@
                             <a href="{{ route('informasi-akun') }}" class="btn btn-outline-warning rounded-pill mx-2"><i
                                     class="bi bi-person-circle mx-1"></i>Profile</a>
                         @endif
+                        @if (auth()->user()->hasRole('organizer'))
+                            <a href="{{ route('dashboard-organizer') }}"
+                                class="btn btn-outline-warning rounded-pill mx-2"><i
+                                    class="bi-speedometer2 mx-1"></i>Dashboard</a>
+                        @endif
                         <a href="{{ route('logout') }}" class="btn custom-btn d-lg-block d-none mx-2"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
                                 class="bi-box-arrow-right mx-1"></i>{{ __('Logout') }}

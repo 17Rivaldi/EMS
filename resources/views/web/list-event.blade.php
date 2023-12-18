@@ -58,8 +58,8 @@
                                                     {{ \Carbon\Carbon::parse($row->event_date)->formatLocalized('%d %b %Y') }}
                                                 </div>
                                             </div>
-                                            <div class="card-footer bg-white">
-                                                Penyelenggara
+                                            <div class="card-footer bg-white text-secondary">
+                                                {{ $row->organizer->name }}
                                             </div>
                                         </div>
                                     </div>

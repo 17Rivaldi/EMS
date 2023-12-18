@@ -5,23 +5,6 @@
 @endsection
 
 @section('content')
-    {{-- Main Content --}}
-    {{-- <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-0">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-light">Daftar Event</h1>
-                </div><!-- /.col -->
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-<li class="breadcrumb-item active">Event</li>
-</ol>
-</div><!-- /.col -->
-</div><!-- /.row -->
-</div><!-- /.container-fluid -->
-</div> --}}
-
     <!-- Table -->
     <div class="container-fluid py-4">
         <div class="row">
@@ -37,23 +20,30 @@
                             <table id="data-table" class="table align-items-center mb-0 table-responsive table-hover">
                                 <thead>
                                     <tr>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama
-                                            Event</th>
-                                        {{-- <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            Deskripsi</th> --}}
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Lokasi</th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Tanggal</th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Jam Mulai</th>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Gambar Event</th>
-                                        <th class="text-center text-secondary text-xxs font-weight-bolder opacity-7">ACTION
+                                            Nama Event
+                                        </th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Penyelenggara
+                                        </th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Lokasi
+                                        </th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Tanggal
+                                        </th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Jam Mulai
+                                        </th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Gambar Event
+                                        </th>
+                                        <th class="text-center text-secondary text-xxs font-weight-bolder opacity-7">
+                                            ACTION
                                         </th>
                                     </tr>
                                 </thead>
@@ -67,9 +57,11 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            {{-- <td>
-                                                <p class="text-xs font-weight-bold mb-0">{{ $event->description }}</p>
-                                    </td> --}}
+                                            <td class="align-middle text-center">
+                                                <span class="text-secondary text-xs font-weight-bold">
+                                                    {{ $event->organizer->name }}
+                                                </span>
+                                            </td>
                                             <td class="align-middle text-center text-sm">
                                                 <span
                                                     class="badge badge-sm bg-gradient-primary">{{ $event->event_location }}</span>

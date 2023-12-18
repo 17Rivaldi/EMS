@@ -23,6 +23,10 @@ class CreateEventsTable extends Migration
             $table->time('start_time');
             $table->string('event_image', 255);
             $table->unsignedBigInteger('ticket_price')->default(0);
+            // Kolom organizer
+            $table->unsignedBigInteger('organizer_id');
+            // Foreign key untuk menghubungkan ke tabel users
+            $table->foreign('organizer_id')->references('id')->on('users');
         });
     }
     /**

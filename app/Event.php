@@ -16,5 +16,11 @@ class Event extends Model
         'description',
         'event_image',
         'ticket_price',
+        'organizer_id',
     ];
+
+    public function organizer()
+    {
+        return $this->belongsTo(User::class, 'organizer_id');
+    }
 }

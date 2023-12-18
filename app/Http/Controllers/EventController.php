@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
 class EventController extends Controller
@@ -15,8 +16,16 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::all();
-        return view('event.index', ['events' => $events]);
+        $user = Auth::user();
+        // Jika pengguna adalah admin, ambil semua event
+        if ($user->hasRole('admin')) {
+            $events = Event::all();
+            return view('event.index', ['events' => $events]);
+        } else {
+            // Jika pengguna adalah penyelenggara, ambil event yang dimilikinya
+            $events = Event::where('organizer_id', $user->id)->get();
+            return view('organizer.event-organizer.index', ['events' => $events]);
+        }
     }
 
     /**
@@ -26,7 +35,12 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('event.create');
+        $user = Auth::user();
+        if ($user->hasRole('admin')) {
+            return view('event.create');
+        } elseif ($user->hasRole('organizer')) {
+            return view('organizer.event-organizer.create');
+        }
     }
 
     /**
@@ -64,6 +78,8 @@ class EventController extends Controller
         $event->event_date = $request->event_date;
         $event->start_time = $request->start_time;
         $event->ticket_price = $request->ticket_price;
+        // ID penyelenggara yang saat ini masuk
+        $event->organizer_id = auth()->user()->id;
 
         if ($request->hasFile('event_image')) {
             $event->event_image = $name_img;
@@ -100,9 +116,12 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        return view('event.edit', [
-            'event' => $event
-        ]);
+        $user = Auth::user();
+        if ($user->hasRole('admin')) {
+            return view('event.edit', ['event' => $event]);
+        } elseif ($user->hasRole('organizer')) {
+            return view('organizer.event-organizer.edit', ['event' => $event]);
+        }
     }
 
     /**

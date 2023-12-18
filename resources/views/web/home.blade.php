@@ -247,8 +247,8 @@
                                                     {{ \Carbon\Carbon::parse($event->event_date)->formatLocalized('%d-%m-%Y') }}
                                                 </div>
                                             </div>
-                                            <div class="card-footer bg-white">
-                                                Penyelenggara
+                                            <div class="card-footer bg-white text-secondary">
+                                                {{ $event->organizer->name }}
                                             </div>
                                         </div>
                                     </div>
@@ -301,8 +301,8 @@
                                                         {{ \Carbon\Carbon::parse($event->event_date)->formatLocalized('%d-%m-%Y') }}
                                                     </div>
                                                 </div>
-                                                <div class="card-footer bg-white">
-                                                    Penyelenggara
+                                                <div class="card-footer bg-white text-secondary">
+                                                    {{ $event->organizer->name }}
                                                 </div>
                                             </div>
                                         </div>

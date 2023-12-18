@@ -37,10 +37,12 @@ Route::middleware('role:admin')->group(function () {
     Route::put('/users/{id}', 'UserController@update')->name('users.update');
     // Hapus User
     Route::delete('/users/{id}', 'UserController@destroy')->name('users.destroy');
+});
 
+Route::middleware(['role:admin|organizer'])->group(function () {
+    // Route Penyelenggara
+    Route::get('/dashboard-organizer', 'OrganizerController@index')->name('dashboard-organizer');
 
-
-    
     //Event List
     Route::get('/daftar-event', 'EventController@index')->name('daftar.event');
 

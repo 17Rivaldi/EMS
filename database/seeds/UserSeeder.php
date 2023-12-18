@@ -12,20 +12,31 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $admin = User::create([
-            'name' => 'Admin Role',
+        $admin = User::firstOrCreate([
             'email' => 'admin@role.id',
+        ], [
+            'name' => 'Admin',
             'password' => bcrypt('12345678'),
         ]);
 
         $admin->assignRole('admin');
 
-        $user = User::create([
-            'name' => 'User Role',
+        $user = User::firstOrCreate([
             'email' => 'user@role.id',
+        ], [
+            'name' => 'User',
             'password' => bcrypt('12345678'),
         ]);
 
         $user->assignRole('user');
+
+        $organizer = User::firstOrCreate([
+            'email' => 'organizer@role.id',
+        ], [
+            'name' => 'Organizer',
+            'password' => bcrypt('12345678'),
+        ]);
+
+        $organizer->assignRole('organizer');
     }
 }
