@@ -30,8 +30,14 @@ class HomeController extends Controller
             ->orderBy('event_date')
             ->take(4)
             ->get();
-        $allevents = Event::all();
-        return view('web.home', ['events' => $events], ['allevents' => $allevents]);
+        $eventterdekat = Event::where('event_date', '>=', $today)
+            ->orderBy('event_date')
+            ->take(1)
+            ->get();
+
+        $semuaevent = Event::all();
+
+        return view('web.home', compact('semuaevent', 'events', 'eventterdekat'));
     }
 
     public function listEvent()
