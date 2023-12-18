@@ -376,6 +376,7 @@
         </div>
     </div>
 </section>
+@endsection
 
 @section ('addCss')
 <style>
