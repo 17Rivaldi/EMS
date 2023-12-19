@@ -16,45 +16,77 @@
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col">
-                        <form>
-                            <div class="mb-3">
-                                <label for="gambar" class="form-label">Gambar Profile</label>
-                                <div class="profile-image position-relative text-center" id="profileImageContainer">
-                                    <img src="default-profile.jpg" alt="Profile Image" id="profileImage" class="img-fluid">
-                                    <input type="file" id="fileInput" class="file-input" accept="image/*">
-                                    <label for="fileInput" class="change-btn position-absolute bottom-0 start-50 translate-middle-x">Ganti Gambar</label>
+                        <form action="{{ route('update.profile', $users->id) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                            <div class="mb-3 d-block" >
+                                <!-- <label for="gambar" class="form-label">Gambar Profile</label> -->
+                                <div class="profile-image mx-auto" id="profileImageContainer">
+                                @if ($users->gambar)
+                                    <img src="{{ asset('upload/profile-image/' . $users->gambar) }}" alt="Profile Image" id="profileImage" class="img-fluid">
+                                @else
+                                    <img src="https://t4.ftcdn.net/jpg/03/31/69/91/360_F_331699188_lRpvqxO5QRtwOM05gR50ImaaJgBx68vi.jpg" alt="Profile Image" id="profileImage" class="img-fluid">
+                                @endif
+                                </div>
+                                <div class="text-center">
+                                    <input type="file" id="fileInput" name="fileInput" class="file-input" accept="image/*">
+                                    <label for="fileInput" class="change-btn">Ganti Gambar</label>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="nama" class="form-label">Nama:</label>
-                                <input type="text" class="form-control border-0 border-bottom border-dark bg-light" id="nama" placeholder="Masukkan nama Anda">
+                                <input type="text" class="form-control border-0 border-bottom border-dark bg-light" id="nama" name="nama" placeholder="Masukkan nama Anda" value="{{ $users->name }}">
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Alamat Email:</label>
-                                <input type="email" class="form-control border-0 border-bottom border-dark bg-light" id="email" placeholder="Masukkan alamat email Anda">
+                                <input type="email" class="form-control border-0 border-bottom border-dark bg-light" id="email" name="email" placeholder="Masukkan alamat email Anda" value="{{ $users->email }}">
                             </div>
+                            <!-- <div class="mb-3">
+                                <label for="password" class="form-label">Password: (kosongi jika tidak diubah)</label>
+                                <input type="password" class="form-control border-0 border-bottom border-dark bg-light" id="password" name="password" placeholder="Masukkan password baru Anda" value="">
+                                <input type="hidden" id="password_lama" name="password_lama" value="{{ $users->password }}">
+                            </div> -->
                             <div class="mb-3">
                                 <label for="phone_number" class="form-label">Nomor Telepon</label>
-                                <input type="text" class="form-control border-0 border-bottom border-dark bg-light" id="phone_number" name="phone_number" placeholder="Masukkan nomor telepon Anda">
+                                <input type="text" class="form-control border-0 border-bottom border-dark bg-light" id="phone_number" name="phone_number" placeholder="Masukkan nomor telepon Anda" value="{{ $users->phone_number }}">
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="mb-3">
                                         <label for="birthdate" class="form-label">Tanggal Lahir</label>
-                                        <input type="date" class="form-control border-0 border-bottom border-dark bg-light" id="birthdate" name="birthdate">
+                                        <input type="date" class="form-control border-0 border-bottom border-dark bg-light" id="birthdate" name="birthdate" value="{{ $users->birthdate }}">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="mb-3">
                                         <label class="form-label d-block">Jenis Kelamin</label>
-                                        <div class="form-check form-check-inline mt-2">
-                                            <input class="form-check-input" type="radio" name="gender" id="male" value="male">
-                                            <label class="form-check-label" for="male">Laki-laki</label>
-                                        </div>
-                                        <div class="form-check form-check-inline mt-2">
-                                            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
-                                            <label class="form-check-label" for="female">Perempuan</label>
-                                        </div>
+                                        @if ($users->gender == "male")
+                                            <div class="form-check form-check-inline mt-2">
+                                                <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked>
+                                                <label class="form-check-label" for="male">Laki-laki</label>
+                                            </div>
+                                            <div class="form-check form-check-inline mt-2">
+                                                <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                                                <label class="form-check-label" for="female">Perempuan</label>
+                                            </div>
+                                        @elseif ($users->gender == "female")
+                                            <div class="form-check form-check-inline mt-2">
+                                                <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                                                <label class="form-check-label" for="male">Laki-laki</label>
+                                            </div>
+                                            <div class="form-check form-check-inline mt-2">
+                                                <input class="form-check-input" type="radio" name="gender" id="female" value="female" checked>
+                                                <label class="form-check-label" for="female">Perempuan</label>
+                                            </div>
+                                        @else
+                                            <div class="form-check form-check-inline mt-2">
+                                                <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                                                <label class="form-check-label" for="male">Laki-laki</label>
+                                            </div>
+                                            <div class="form-check form-check-inline mt-2">
+                                                <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                                                <label class="form-check-label" for="female">Perempuan</label>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -66,6 +98,28 @@
         </div>
     </div>
 </section>
+<script>
+    // Ambil elemen input file
+    const fileInput = document.getElementById('fileInput');
+
+    // Ambil elemen gambar
+    const profileImage = document.getElementById('profileImage');
+
+    // Tambahkan event listener untuk input file
+    fileInput.addEventListener('change', function () {
+        // Cek apakah ada file yang dipilih
+        if (fileInput.files.length > 0) {
+            // Ambil file yang dipilih
+            const selectedFile = fileInput.files[0];
+
+            // Buat objek URL untuk file yang dipilih
+            const objectURL = URL.createObjectURL(selectedFile);
+
+            // Ganti atribut src pada elemen gambar dengan URL objek
+            profileImage.src = objectURL;
+        }
+    });
+</script>
 @endsection
 
 @section('addCss')

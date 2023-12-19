@@ -75,3 +75,5 @@ Route::get('/form-pembayaran', 'FormpembayaranController@index')->name('form-pem
 Route::get('/tiket-saya', 'TiketSayaController@index')->name('tiket-saya');
 
 Route::get('/informasi-akun', 'InformasiAkunController@index')->name('informasi-akun');
+Route::post('/informasi-akun/update-profile/{id}', 'InformasiAkunController@update')->name('update.profile');
+
