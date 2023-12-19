@@ -3,7 +3,7 @@
 @section('content')
 <section class="hero-section" id="section_1">
     <div class="section-overlay"></div>
-    
+
     <div class="container d-flex justify-content-center align-items-center">
         <div class="row">
             @foreach ($eventterdekat as $eventnya)
@@ -57,7 +57,7 @@
             @endforeach
         </div>
     </div>
-    
+
     <div class="video-wrap">
         <video autoplay="" loop="" muted="" class="custom-video" poster="">
             <source src="{{ asset('img/web/pexels-2022395.mp4') }}" type="video/mp4">
@@ -234,19 +234,17 @@
                             <div class="card">
                                 <img class="img-fluid rounded-top" src="{{ asset('upload/' . $event->event_image) }}" style="width: 254px; height: 144px;">
                                 <div class="card-body">
-                                    <div class="card-title">
-                                        <h6 style="color: #494A4A !important">{{ $event->event_name }}</h6>
-                                    </div>
-                                    <div class="card-text text-secondary my-4">
+                                    <h6 class="card-title">{{ $event->event_name }}</h6>
+                                    <div class="card-text my-4">
                                         <div>
                                             <i class="bi bi-geo-alt me-2"></i>{{ $event->event_location }}
                                         </div>
-                                        <div class="text-secondary">
+                                        <div>
                                             <i class="bi bi-calendar me-2"></i>
                                             {{ \Carbon\Carbon::parse($event->event_date)->formatLocalized('%d-%m-%Y') }}
                                         </div>
                                     </div>
-                                    <div class="card-footer bg-white text-secondary">
+                                    <div class="card-footer warna-footer">
                                         {{ $event->organizer->name }}
                                     </div>
                                 </div>
@@ -286,10 +284,8 @@
                                 <div class="card">
                                     <img class="img-fluid rounded-top" src="{{ asset('upload/' . $event->event_image) }}" style="width: 254px; height: 144px;">
                                     <div class="card-body">
-                                        <div class="card-title">
-                                            <h6 style="color: #494A4A !important">{{ $event->event_name }}</h6>
-                                        </div>
-                                        <div class="card-text text-secondary my-4">
+                                        <h6 class="card-title">{{ $event->event_name }}</h6>
+                                        <div class="card-text my-4">
                                             <div>
                                                 <i class="bi bi-geo-alt me-2"></i>{{ $event->event_location }}
                                             </div>
@@ -298,7 +294,7 @@
                                                 {{ \Carbon\Carbon::parse($event->event_date)->formatLocalized('%d-%m-%Y') }}
                                             </div>
                                         </div>
-                                        <div class="card-footer bg-white text-secondary">
+                                        <div class="card-footer warna-footer">
                                             {{ $event->organizer->name }}
                                         </div>
                                     </div>
@@ -380,4 +376,31 @@
         </div>
     </div>
 </section>
+@endsection
+
+@section ('addCss')
+<style>
+    .warna-footer {
+        background-color: white;
+    }
+
+    .carousel-inner .card:hover {
+        background-color: orangered;
+        color: white;
+    }
+
+    .carousel-inner .card:hover .warna-footer {
+        background-color: orangered;
+        color: white;
+    }
+
+    .carousel-inner .card:hover i {
+        color: white;
+    }
+
+    .carousel-inner .card:hover .card-title {
+        color: white;
+    }
+</style>
+
 @endsection
