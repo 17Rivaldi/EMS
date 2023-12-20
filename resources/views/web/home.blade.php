@@ -343,21 +343,22 @@
 
                 <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel" aria-labelledby="nav-ContactForm-tab">
-                        <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post" role="form">
+                        <form class="custom-form contact-form mb-5 mb-lg-0" action="{{ route('contact.store') }}" method="post" role="form">
+                        @csrf
                             <div class="contact-form-body">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="text" name="contact-name" id="contact-name" class="form-control" placeholder="Full name" required>
+                                        <input type="text" name="sender_name" id="sender_name" class="form-control" placeholder="Full name" required>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="email" name="contact-email" id="contact-email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required>
+                                        <input type="email" name="sender_email" id="sender_email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required>
                                     </div>
                                 </div>
 
-                                <input type="text" name="contact-company" id="contact-company" class="form-control" placeholder="Company" required>
+                                <textarea name="message_text" rows="3" class="form-control" id="message_text" placeholder="Message"></textarea>
 
-                                <textarea name="contact-message" rows="3" class="form-control" id="contact-message" placeholder="Message"></textarea>
+                                <input type="hidden" id="message_date" name="message_date" value="" required>
 
                                 <div class="col-lg-4 col-md-10 col-8 mx-auto">
                                     <button type="submit" class="form-control">Send message</button>
@@ -403,4 +404,14 @@
     }
 </style>
 
+@endsection
+
+@section('addJs')
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var currentDate = new Date();
+        var formattedDate = currentDate.toISOString().split('T')[0];
+        document.getElementById('message_date').value = formattedDate;
+    });
+</script>
 @endsection

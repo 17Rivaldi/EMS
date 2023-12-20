@@ -37,6 +37,9 @@ Route::middleware('role:admin')->group(function () {
     Route::put('/users/{id}', 'UserController@update')->name('users.update');
     // Hapus User
     Route::delete('/users/{id}', 'UserController@destroy')->name('users.destroy');
+    // Contact
+    Route::get('/contact', 'ContactController@index')->name('contact.index');
+    Route::get('/contact/{contact}/delete', 'ContactController@destroy')->name('contact.destroy');
 });
 
 Route::middleware(['role:admin|organizer'])->group(function () {
@@ -77,3 +80,6 @@ Route::get('/tiket-saya', 'TiketSayaController@index')->name('tiket-saya');
 
 Route::get('/informasi-akun', 'InformasiAkunController@index')->name('informasi-akun');
 Route::post('/informasi-akun/update-profile/{id}', 'InformasiAkunController@update')->name('update.profile');
+
+// Contact Form
+Route::post('/home', 'ContactController@store')->name('contact.store');
