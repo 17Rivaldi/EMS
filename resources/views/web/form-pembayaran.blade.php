@@ -48,29 +48,32 @@
 
                     <div class="card form-card my-3">
                         <div class="card-body">
-                            <form>
+                            <form action="{{ route('form-pembayaran.store') }}" method="POST" id="formTransaksi">
+                                @csrf
                                 <div class="row mb-3">
+                                    <input type="hidden" name="event_id" value="{{ $event->id }}">
                                     <div class="col">
                                         <label for="name" class="form-label">Nama</label>
-                                        <input type="text" class="form-control" id="name"
-                                            placeholder="Masukkan nama">
+                                        <input type="text" class="form-control" id="name" name="name"
+                                            placeholder="Masukkan nama" value="{{ $user->name }}" required>
                                     </div>
                                     <div class="col">
                                         <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="email"
-                                            placeholder="Masukkan email">
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            placeholder="Masukkan email" value="{{ $user->email }}" required>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col">
                                         <label for="name" class="form-label">Alamat</label>
-                                        <input type="text" class="form-control" id="alamat"
-                                            placeholder="Masukkan Alamat">
+                                        <input type="text" class="form-control" id="alamat" name="alamat"
+                                            placeholder="Masukkan Alamat" required>
                                     </div>
                                     <div class="col">
-                                        <label for="email" class="form-label">No Handphone</label>
-                                        <input type="email" class="form-control" id="nohp"
-                                            placeholder="Masukkan Nomor Handphone">
+                                        <label for="phone" class="form-label">No Handphone</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone"
+                                            placeholder="Masukkan Nomor Handphone" value="{{ $user->phone_number }}"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -80,11 +83,12 @@
                                             id="subtractTicket"><i class="bi bi-dash"></i></button>
                                         <input type="text"
                                             class="form-control text-center rounded-pill bg-primary text-light"
-                                            id="quantityInput" value="1" readonly>
+                                            id="quantityInput" value="1" name="quantity" readonly>
                                         <button class="btn btn-outline-primary mx-1 rounded-circle" type="button"
                                             id="addTicket"><i class="bi bi-plus"></i></button>
                                     </div>
                                 </div>
+                                {{-- <button type="submit" class="btn btn-primary buy-button">Beli Tiket</button> --}}
                             </form>
                         </div>
                     </div>
@@ -125,7 +129,9 @@
                         </div>
                         <div class="card-footer bg-transparent border-0">
                             <div class="d-grid">
-                                <a href="#" class="btn btn-primary buy-button">Beli Tiket</a>
+                                <button type="submit" id="submitButton" class="btn btn-primary buy-button">
+                                    Beli Tiket
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -258,6 +264,36 @@
                     ribuan = reverse.match(/\d{1,3}/g);
                 ribuan = ribuan.join('.').split('').reverse().join('');
                 return ribuan;
+            }
+
+            // Menggunakan tombol submit formulir pada saat tombol "Beli Tiket" di luar formulir diklik
+            $('#submitButton').click(function() {
+                // Validasi manual sebelum mengirimkan formulir
+                if (validateForm()) {
+                    // Simulasikan klik pada tombol submit formulir
+                    $('#formTransaksi').submit();
+                }
+                // else {
+                //     alert('Pastikan semua input telah diisi.');
+                // }
+            });
+
+            function validateForm() {
+                var isValid = true;
+                var inputs = $('#formTransaksi input[required]');
+
+                inputs.each(function() {
+                    if (!$(this).val().trim()) {
+                        // Jika input kosong, tambahkan pesan kesalahan
+                        $(this).addClass('is-invalid');
+                        isValid = false;
+                    } else {
+                        // Jika input diisi, hapus pesan kesalahan jika ada
+                        $(this).removeClass('is-invalid');
+                    }
+                });
+
+                return isValid;
             }
         });
     </script>
