@@ -71,9 +71,9 @@ Route::get('/list-event', 'HomeController@ListEvent')->name('list-event');
 // Route::get('/detail', 'DetailController@index')->name('detail');
 
 Route::get('/form-pembayaran', 'FormpembayaranController@index')->name('form-pembayaran');
+Route::post('/form-pembayaran', 'FormPembayaranController@store')->name('form-pembayaran.store');
 
 Route::get('/tiket-saya', 'TiketSayaController@index')->name('tiket-saya');
 
 Route::get('/informasi-akun', 'InformasiAkunController@index')->name('informasi-akun');
 Route::post('/informasi-akun/update-profile/{id}', 'InformasiAkunController@update')->name('update.profile');
-
