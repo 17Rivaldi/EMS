@@ -3,6 +3,15 @@
 @section('content')
     <section class="section-padding" style="bacground-color:#fbfbfb " id="">
         <div class="container event-detail-transaction">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{{ route('events.show', $event->id) }}" style="font-size: 18px">
+                            <i class="bi bi-arrow-left-circle-fill fw-semibold"> Back</i>
+                        </a>
+                    </li>
+                </ol>
+            </nav>
             <div class="section-title">Detail Pemesanan</div>
             <div class="row">
                 <div class="col-lg-8">

@@ -6,7 +6,7 @@
 
             <div class="row event-detail mt-4">
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
+                    <ol class="breadcrumb fw-semibold">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
                         <li class="breadcrumb-item"><a href="{{ route('list-event') }}">Event</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{ $event->event_name }}</li>
@@ -36,8 +36,8 @@
                         </div>
                         <div class="card-footer bg-transparent border-0">
                             <div class="d-grid gap-2">
-                                <a href="{{ route('form-pembayaran.show', $event->id) }}" class="btn btn-primary btn-beli-tiket"
-                                    type="button">Beli Tiket</a>
+                                <a href="{{ route('form-pembayaran.show', $event->id) }}"
+                                    class="btn btn-primary btn-beli-tiket" type="button">Beli Tiket</a>
                             </div>
                         </div>
                     </div>
@@ -89,8 +89,8 @@
         }
 
         /* .event-detail-description p strong {
-                                                                                font-weight: 700;
-                                                                                font-size: 20px
-                                                                                    } */
+            font-weight: 700;
+            font-size: 20px
+            } */
     </style>
 @endsection

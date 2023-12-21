@@ -65,29 +65,33 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_1">Home</a>
-                        </li>
+                        @if (request()->route()->getName() !== 'events.show' &&
+                                request()->route()->getName() !== 'form-pembayaran.show' &&
+                                request()->route()->getName() !== 'list-event')
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_1">Home</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_2">About</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_2">About</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">Artists</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_3">Artists</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_4">Upcoming</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_4">Upcoming</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_5">Event's</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_5">Event's</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_6">Contact</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_6">Contact</a>
+                            </li>
+                        @endif
                     </ul>
 
                     @guest
@@ -181,33 +185,37 @@
             <div class="row">
 
                 <div class="col-lg-6 col-12 mb-4 pb-2">
-                    <h5 class="site-footer-title mb-3">Links</h5>
+                    @if (request()->route()->getName() !== 'events.show' &&
+                            request()->route()->getName() !== 'form-pembayaran.show' &&
+                            request()->route()->getName() !== 'list-event')
+                        <h5 class="site-footer-title mb-3">Links</h5>
 
-                    <ul class="site-footer-links">
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Home</a>
-                        </li>
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Home</a>
+                            </li>
 
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">About</a>
-                        </li>
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">About</a>
+                            </li>
 
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Artists</a>
-                        </li>
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Artists</a>
+                            </li>
 
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Schedule</a>
-                        </li>
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Schedule</a>
+                            </li>
 
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Pricing</a>
-                        </li>
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Pricing</a>
+                            </li>
 
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Contact</a>
-                        </li>
-                    </ul>
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Contact</a>
+                            </li>
+                        </ul>
+                    @endif
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
