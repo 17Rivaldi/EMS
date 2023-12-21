@@ -39,17 +39,19 @@
                 </div>
             @endif
 
-            @if (session('success'))
+            {{-- @if (session('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}
                 </div>
-            @endif
+            @endif --}}
 
             @include('layouts.footer')
 
         </div>
 
     </main>
+
+    @include('sweetalert::alert')
 
     <!--   Core JS Files   -->
     <script src="{{ asset('js/core/popper.min.js') }}"></script>

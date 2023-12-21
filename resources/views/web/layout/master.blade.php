@@ -261,6 +261,8 @@
 
     <!-- JAVASCRIPT FILES -->
 
+    @include('sweetalert::alert')
+
     <script src="{{ asset('js/web/jquery.min.js') }}"></script>
     <script src="{{ asset('js/web/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/web/jquery.sticky.js') }}"></script>
