@@ -13,18 +13,13 @@
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <div class="input-group search-container">
-                        <input type="text" class="form-control" placeholder="Cari event" aria-label="Cari event"
-                            aria-describedby="basic-addon1">
-                        <span class="input-group-text" id="basic-addon1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0">
-                                </path>
-                            </svg>
-                        </span>
-                    </div>
+                    <form action="{{ route('list-event') }}" method="GET" class="d-flex">
+                        <input type="text" class="form-control shadow" name="search" id="search-input"
+                            placeholder="Cari event" aria-label="Cari event" aria-describedby="basic-addon1">
+                        <button type="submit" class="btn btn-primary ms-1 shadow">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -32,7 +27,7 @@
             <div class="row">
                 <div class="container mt-5">
                     <div class="row">
-                        @foreach ($allevents as $row)
+                        @forelse ($allevents as $row)
                             <!-- Card 1 -->
                             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                 <a href="{{ route('events.show', ['id' => $row->id]) }}" style="color: black;">
@@ -57,23 +52,15 @@
                                     </div>
                                 </a>
                             </div>
-                        @endforeach
-
-                        <!-- Pagination -->
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
+                        @empty
+                            <div class="col-12 text-center">
+                                <p>Tidak ada hasil pencarian</p>
+                            </div>
+                        @endforelse
+                    </div>
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-center">
+                        {{ $allevents->links() }}
                     </div>
     </section>
 @endsection
@@ -113,11 +100,6 @@
 
         .card:hover .card-title {
             color: white;
-        }
-
-        .search-container {
-            /* margin-top: 50px; */
-            /* width: 500px; */
         }
     </style>
 @endsection

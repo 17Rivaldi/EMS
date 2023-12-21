@@ -40,9 +40,27 @@ class HomeController extends Controller
         return view('web.home', compact('semuaevent', 'events', 'eventterdekat'));
     }
 
-    public function listEvent()
+    public function listEvent(Request $request)
     {
-        $allevents = Event::all();
-        return view('web.list-event', ['allevents' => $allevents]);
+        // $allevents = Event::all();
+        // return view('web.list-event', ['allevents' => $allevents]);
+        // $allevents = Event::paginate(8); // <-- Jumlah Card Event dalam 1 Halama Pagination
+        // return view('web.list-event', compact('allevents'));
+
+        $search = $request->input('search');
+
+        // Jika parameter pencarian tidak diberikan, kosongkan sesi
+        if (!$search) {
+            session(['search' => null]);
+        } else {
+            session(['search' => $search]);
+        }
+
+        $allevents = Event::when($search, function ($query, $search) {
+            return $query->where('event_name', 'like', '%' . $search . '%')
+                ->orWhere('event_location', 'like', '%' . $search . '%');
+        })->paginate(8); // <-- Jumlah Card Event yang ditampilkan dalam 1 Halaman Pagination
+
+        return view('web.list-event', compact('allevents'));
     }
 }
