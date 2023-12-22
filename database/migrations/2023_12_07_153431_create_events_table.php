@@ -13,7 +13,7 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('tbl_events', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('event_name', 255);
@@ -26,7 +26,7 @@ class CreateEventsTable extends Migration
             // Kolom organizer
             $table->unsignedBigInteger('organizer_id');
             // Foreign key untuk menghubungkan ke tabel users
-            $table->foreign('organizer_id')->references('id')->on('users');
+            $table->foreign('organizer_id')->references('id')->on('tbl_users');
         });
     }
     /**
@@ -36,6 +36,6 @@ class CreateEventsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('tbl_events');
     }
 }

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
-class InformasiAkunController extends Controller
+class AccountController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,7 +41,7 @@ class InformasiAkunController extends Controller
     {
         $validatedData = $request->validate([
             'nama' => 'required',
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email|unique:tbl_users',
             'phone_number' => 'nullable|numeric',
             'birthdate' => 'nullable|date',
             'gender' => 'nullable|in:male,female',
@@ -153,7 +153,7 @@ class InformasiAkunController extends Controller
         // Simpan perubahan
         $user->save();
 
-        return redirect()->route('account')->with('success', 'Profil berhasil diperbarui.');
+        return redirect()->route('informasi-akun')->with('success', 'Profil berhasil diperbarui.');
     }
 
     /**

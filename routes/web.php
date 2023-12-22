@@ -64,7 +64,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/events/{id}', 'EventController@show')->name('events.show');
 
-Route::get('/events/{id}/form-pembayaran', 'FormpembayaranController@show')->name('form-pembayaran.show');
+Route::get('/events/{id}/form-pembayaran', 'TransactionController@show')->name('form-pembayaran.show');
 
 
 //routes ke halaman daftar event
@@ -73,13 +73,13 @@ Route::get('/list-event', 'HomeController@ListEvent')->name('list-event');
 // Detail Event
 // Route::get('/detail', 'DetailController@index')->name('detail');
 
-Route::get('/form-pembayaran', 'FormpembayaranController@index')->name('form-pembayaran');
-Route::post('/form-pembayaran', 'FormPembayaranController@store')->name('form-pembayaran.store');
+Route::get('/form-pembayaran', 'TransactionController@index')->name('form-pembayaran');
+Route::post('/form-pembayaran', 'TransactionController@store')->name('form-pembayaran.store');
 
-Route::get('/tiket-saya', 'TiketSayaController@index')->name('tiket-saya');
+Route::get('/tiket-saya', 'MyTicketController@index')->name('tiket-saya');
 
-Route::get('/informasi-akun', 'InformasiAkunController@index')->name('informasi-akun');
-Route::post('/informasi-akun/update-profile/{id}', 'InformasiAkunController@update')->name('update.profile');
+Route::get('/informasi-akun', 'AccountController@index')->name('informasi-akun');
+Route::post('/informasi-akun/update-profile/{id}', 'AccountController@update')->name('update.profile');
 
 // Contact Form
 Route::post('/home', 'ContactController@store')->name('contact.store');

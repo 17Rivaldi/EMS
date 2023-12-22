@@ -7,7 +7,7 @@ use App\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class FormPembayaranController extends Controller
+class TransactionController extends Controller
 {
     /**
      * Display a listing of the resource.

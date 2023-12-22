@@ -38,6 +38,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'tbl_users';
+
     public function events()
     {
         return $this->hasMany(Event::class, 'organizer_id');

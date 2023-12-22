@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TiketSayaController extends Controller
+class MyTicketController extends Controller
 {
     /**
      * Display a listing of the resource.

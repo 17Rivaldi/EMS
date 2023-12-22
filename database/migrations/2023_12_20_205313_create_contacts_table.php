@@ -13,14 +13,13 @@ class CreateContactsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contacts', function (Blueprint $table) {
+        Schema::create('tbl_contacts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('sender_name');
             $table->string('sender_email');
             $table->text('message_text');
             $table->date('message_date');
             $table->timestamps();
-        
         });
     }
 
@@ -31,6 +30,6 @@ class CreateContactsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contacts');
+        Schema::dropIfExists('tbl_contacts');
     }
 }
