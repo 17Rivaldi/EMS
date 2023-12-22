@@ -67,7 +67,8 @@
                     <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
                         @if (request()->route()->getName() !== 'events.show' &&
                                 request()->route()->getName() !== 'form-pembayaran.show' &&
-                                request()->route()->getName() !== 'list-event')
+                                request()->route()->getName() !== 'list-event' &&
+                                request()->route()->getName() !== 'informasi-akun')
                             <li class="nav-item">
                                 <a class="nav-link click-scroll" href="#section_1">Home</a>
                             </li>
@@ -187,7 +188,8 @@
                 <div class="col-lg-6 col-12 mb-4 pb-2">
                     @if (request()->route()->getName() !== 'events.show' &&
                             request()->route()->getName() !== 'form-pembayaran.show' &&
-                            request()->route()->getName() !== 'list-event')
+                            request()->route()->getName() !== 'list-event' &&
+                            request()->route()->getName() !== 'informasi-akun')
                         <h5 class="site-footer-title mb-3">Links</h5>
 
                         <ul class="site-footer-links">

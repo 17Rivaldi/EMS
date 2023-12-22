@@ -13,7 +13,7 @@ class TiketSayaController extends Controller
      */
     public function index()
     {
-        return view('web.tiket-saya');
+        return view('web.my-tiket');
     }
 
     /**

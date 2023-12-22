@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\User;
 
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class InformasiAkunController extends Controller
     public function index()
     {
         $users = User::find(auth()->id());
-        return view('web.informasi-akun', compact('users'));
+        return view('web.account', compact('users'));
     }
 
     /**
@@ -92,7 +93,7 @@ class InformasiAkunController extends Controller
         // //     'fileInput' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Max 2MB
         // // ])->validate();
 
-        
+
         // $user->name = $request->nama;
         // $user->email = $request->email;
         // $user->phone_number = $request->phone_number;
@@ -104,8 +105,8 @@ class InformasiAkunController extends Controller
         // }else{
         //     $user->password = $request->password_lama;
         // }
-        
-        
+
+
         // $user->save();
 
         // Validasi form
@@ -127,7 +128,7 @@ class InformasiAkunController extends Controller
         $user->phone_number = $request->phone_number;
         $user->birthdate = $request->birthdate;
         $user->gender = $request->gender;
-        
+
         // Update gambar jika ada yang diunggah
         if ($request->fileInput) {
             $image = $request->file('fileInput');
@@ -143,7 +144,7 @@ class InformasiAkunController extends Controller
             // $imagePath = $request->file('fileInput')->store(public_path('upload/profile-image'));
             // $user->gambar = $imagePath;
             // echo $imagePath;
-            
+
             $image->move(public_path() . '/upload/profile-image', $name_img);
             $user->gambar = $name_img;
             echo $name_img;
@@ -152,7 +153,7 @@ class InformasiAkunController extends Controller
         // Simpan perubahan
         $user->save();
 
-        return redirect()->route('informasi-akun')->with('success', 'Profil berhasil diperbarui.');
+        return redirect()->route('account')->with('success', 'Profil berhasil diperbarui.');
     }
 
     /**
@@ -168,7 +169,5 @@ class InformasiAkunController extends Controller
 
     public function updateProfile(Request $request, User $user)
     {
-       
     }
-
 }

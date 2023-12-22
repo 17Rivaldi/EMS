@@ -16,7 +16,7 @@ class FormPembayaranController extends Controller
      */
     public function index()
     {
-        return view('web.form-pembayaran');
+        return view('web.payment-form');
     }
 
     /**
@@ -87,7 +87,7 @@ class FormPembayaranController extends Controller
             return abort(404); // Atau atur respons lainnya jika event tidak ditemukan
         }
 
-        return view('web.form-pembayaran', compact('event', 'user'));
+        return view('web.payment-form', compact('event', 'user'));
     }
 
     /**
