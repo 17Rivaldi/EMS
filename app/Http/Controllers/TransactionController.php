@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\User;
 use App\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -50,14 +51,16 @@ class TransactionController extends Controller
         ]);
 
         $event = Event::find($request->input('event_id'));
+        $user = auth()->user();
 
-        if (!$event) {
+        if (!$event ) {
             return abort(404); // Atau atur respons lainnya jika event tidak ditemukan
         }
 
         // Simpan data ke dalam database
         $transaction = new Transaction([
             'event_id' => $event->id,
+            'user_id' => $user->id,
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'alamat' => $request->input('alamat'),

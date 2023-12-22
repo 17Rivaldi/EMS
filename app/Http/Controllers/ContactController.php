@@ -52,7 +52,7 @@ class ContactController extends Controller
 
         $message->save();
 
-        return redirect()->route('home')->with('success', 'Pesan berhasil dikirim!');
+        return redirect()->route('home')->with('success', 'Pesan Anda Berhasil Dikirim!');
     }
 
     /**

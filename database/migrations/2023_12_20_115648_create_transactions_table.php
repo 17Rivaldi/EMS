@@ -17,6 +17,8 @@ class CreateTransactionsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('event_id');
             $table->foreign('event_id')->references('id')->on('tbl_events')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('tbl_users')->onDelete('cascade');
             $table->string('name');
             $table->string('email');
             $table->string('alamat');

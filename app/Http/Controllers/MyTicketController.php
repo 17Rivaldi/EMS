@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Transaction;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class MyTicketController extends Controller
@@ -13,7 +15,12 @@ class MyTicketController extends Controller
      */
     public function index()
     {
-        return view('web.my-tiket');
+        $user = Auth::user();
+        $transactions = Transaction::with('event')
+            ->where('user_id', $user->id)
+            ->get();
+
+        return view('web.my-ticket', compact('transactions'));
     }
 
     /**

@@ -59,27 +59,28 @@ Route::middleware(['role:admin|organizer'])->group(function () {
     Route::get('/daftar-event/{event}/delete', 'EventController@destroy')->name('event.destroy');
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/form-pembayaran', 'TransactionController@index')->name('form-pembayaran');
+    Route::post('/form-pembayaran', 'TransactionController@store')->name('form-pembayaran.store');
+
+    Route::get('/informasi-akun', 'AccountController@index')->name('informasi-akun');
+    Route::post('/informasi-akun/update-profile/{id}', 'AccountController@update')->name('update.profile');
+    
+    Route::get('/events/{id}/form-pembayaran', 'TransactionController@show')->name('form-pembayaran.show');
+
+    Route::get('/tiket-saya', 'MyTicketController@index')->name('my-ticket.index');
+
+});
 // Home Landing Page
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/events/{id}', 'EventController@show')->name('events.show');
-
-Route::get('/events/{id}/form-pembayaran', 'TransactionController@show')->name('form-pembayaran.show');
-
 
 //routes ke halaman daftar event
 Route::get('/list-event', 'HomeController@ListEvent')->name('list-event');
 
 // Detail Event
 // Route::get('/detail', 'DetailController@index')->name('detail');
-
-Route::get('/form-pembayaran', 'TransactionController@index')->name('form-pembayaran');
-Route::post('/form-pembayaran', 'TransactionController@store')->name('form-pembayaran.store');
-
-Route::get('/tiket-saya', 'MyTicketController@index')->name('tiket-saya');
-
-Route::get('/informasi-akun', 'AccountController@index')->name('informasi-akun');
-Route::post('/informasi-akun/update-profile/{id}', 'AccountController@update')->name('update.profile');
 
 // Contact Form
 Route::post('/home', 'ContactController@store')->name('contact.store');
