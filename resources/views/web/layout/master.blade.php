@@ -67,7 +67,9 @@
                         @if (request()->route()->getName() !== 'events.show' &&
                         request()->route()->getName() !== 'form-pembayaran.show' &&
                         request()->route()->getName() !== 'list-event' &&
-                        request()->route()->getName() !== 'informasi-akun')
+                        request()->route()->getName() !== 'informasi-akun' &&
+                        request()->route()->getName() !== 'my-ticket.index')
+
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="#section_1">Home</a>
                         </li>
