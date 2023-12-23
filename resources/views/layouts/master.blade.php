@@ -17,6 +17,8 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('css/argon-dashboard.css?v=2.0.4') }}" rel="stylesheet" />
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     @yield('addCss')
 </head>
 
@@ -30,22 +32,22 @@
         <div class="container-fluid py-4">
             @yield('content')
             @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
             @endif
 
             {{-- @if (session('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}
-                </div>
-            @endif --}}
+        </div>
+        @endif --}}
 
-            @include('layouts.footer')
+        @include('layouts.footer')
 
         </div>
 
