@@ -237,7 +237,7 @@
                                             src="{{ asset('upload/' . $event->event_image) }}"
                                             style="width: 254px; height: 144px;">
                                         <div class="card-body">
-                                            <h6 class="card-title">{{ $event->event_name }}</h6>
+                                            <p class="card-title fw-bold">{{ Str::limit($event->event_name, 15) }}</p>
                                             <div class="card-text my-4">
                                                 <div>
                                                     <i class="bi bi-geo-alt me-2"></i>{{ $event->event_location }}
@@ -289,7 +289,7 @@
                                                 src="{{ asset('upload/' . $event->event_image) }}"
                                                 style="width: 254px; height: 144px;">
                                             <div class="card-body">
-                                                <h6 class="card-title">{{ $event->event_name }}</h6>
+                                                <p class="card-title fw-bold">{{ Str::limit($event->event_name, 15) }}</p>
                                                 <div class="card-text my-4">
                                                     <div>
                                                         <i class="bi bi-geo-alt me-2"></i>{{ $event->event_location }}
@@ -404,6 +404,8 @@
     <style>
         .warna-footer {
             background-color: white;
+            font-weight: bold;
+            color: #333333;
         }
 
         .carousel-inner .card:hover {
@@ -418,6 +420,10 @@
 
         .carousel-inner .card:hover i {
             color: white;
+        }
+
+        .card-title {
+            color: #333333
         }
 
         .carousel-inner .card:hover .card-title {

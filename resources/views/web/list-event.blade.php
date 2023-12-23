@@ -35,7 +35,7 @@
                                         <img class="img-fluid rounded-top" src="{{ asset('upload/' . $row->event_image) }}"
                                             style="width: 300px; height: 150px;">
                                         <div class="card-body">
-                                            <h6 class="card-title">{{ $row->event_name }}</h6>
+                                            <p class="card-title fw-bold">{{ Str::limit($row->event_name, 25) }}</p>
                                             <div class="card-text my-4">
                                                 <div>
                                                     <i class="bi bi-geo-alt"></i> {{ $row->event_location }}
@@ -76,12 +76,14 @@
             background-color: black;
         }
 
-        .warna-title {
-            color: black;
+        .card-title {
+            color: #333333;
         }
 
         .warna-footer {
             background-color: white;
+            font-weight: bold;
+            color: #333333;
         }
 
         .card:hover {

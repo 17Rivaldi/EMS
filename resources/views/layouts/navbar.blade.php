@@ -39,7 +39,11 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            <a href="{{ route('home') }}" class="dropdown-item"><i class="fas fa-pager me-2"></i>Web</a>
+                            <a href="{{ route('informasi-akun') }}" class="dropdown-item"><i
+                                    class="fas fa-cog me-2"></i>Profile</a>
+
+                            <a class="dropdown-item text-danger" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="fas fa-sign-out-alt me-2"></i>
                                 {{ __('Logout') }}
@@ -48,8 +52,6 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
-                            <a href="{{ route('home') }}" class="dropdown-item"><i class="fas fa-pager me-2"></i>Web</a>
-                            <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i>Setting</a>
                         </div>
                     </li>
                 @endguest
