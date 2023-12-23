@@ -40,6 +40,14 @@
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Gambar Event
                                     </th>
+                                    <th
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Tiket Terjual
+                                    </th>
+                                    <th
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Pendapatan
+                                    </th>
                                     <th class="text-center text-secondary text-xxs font-weight-bolder opacity-7">
                                         ACTION
                                     </th>
@@ -78,6 +86,9 @@
                                                 <img src="{{ asset('upload/' . $event->event_image) }}" alt="Event Image"
                                                     style="width: 100px; height: 60px;">
                                             </td>
+                                            <td class="text-center">{{ $event->totalTicketsSold }}</td>
+                                            <td class="text-center">Rp.
+                                                {{ number_format($event->totalSales, 0, ',', '.') }}</td>
                                             <td class="align-middle">
                                                 <div class="text-center" style="display: flex; flex-wrap: nowrap;">
                                                     <button type="button" class="btn btn-primary btn-sm"

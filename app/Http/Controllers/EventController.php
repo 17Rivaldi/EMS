@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -20,10 +21,18 @@ class EventController extends Controller
         // Jika pengguna adalah admin, ambil semua event
         if ($user->hasRole('admin')) {
             $events = Event::all();
+            foreach ($events as $event) {
+                $event->totalTicketsSold = Transaction::where('event_id', $event->id)->sum('quantity');
+                $event->totalSales = Transaction::where('event_id', $event->id)->sum('total_payment');
+            }
             return view('event.index', ['events' => $events]);
         } else {
             // Jika pengguna adalah penyelenggara, ambil event yang dimilikinya
             $events = Event::where('organizer_id', $user->id)->get();
+            foreach ($events as $event) {
+                $event->totalTicketsSold = Transaction::where('event_id', $event->id)->sum('quantity');
+                $event->totalSales = Transaction::where('event_id', $event->id)->sum('total_payment');
+            }
             return view('organizer.event-organizer.index', ['events' => $events]);
         }
     }

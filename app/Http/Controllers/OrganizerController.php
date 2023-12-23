@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\Transaction;
 use Illuminate\Http\Request;
 
 class OrganizerController extends Controller
@@ -20,7 +21,17 @@ class OrganizerController extends Controller
         // Menghitung total event berdasarkan id penyelenggara
         $totalEvents = Event::where('organizer_id', $organizerId)->count();
 
-        return view('organizer.dashboard-organizer', compact('totalEvents'));
+        // Menghitung total tiket terjual berdasarkan id penyelenggara
+        $totalTicketsSold = Transaction::whereHas('event', function ($query) use ($organizerId) {
+            $query->where('organizer_id', $organizerId);
+        })->sum('quantity');
+
+        // Menghitung total sales atau pendapatan berdasarkan id penyelenggara
+        $totalSales = Transaction::whereHas('event', function ($query) use ($organizerId) {
+            $query->where('organizer_id', $organizerId);
+        })->sum('total_payment');
+
+        return view('organizer.dashboard-organizer', compact('totalEvents', 'totalTicketsSold', 'totalSales'));
     }
 
     /**

@@ -35,7 +35,7 @@
                                         <img class="img-fluid rounded-top" src="{{ asset('upload/' . $row->event_image) }}"
                                             style="width: 300px; height: 150px;">
                                         <div class="card-body">
-                                            <p class="card-title fw-bold">{{ Str::limit($row->event_name, 25) }}</p>
+                                            <p class="card-title fw-bold">{{ Str::limit($row->event_name, 20) }}</p>
                                             <div class="card-text my-4">
                                                 <div>
                                                     <i class="bi bi-geo-alt"></i> {{ $row->event_location }}
@@ -43,6 +43,9 @@
                                                 <div class="mt-2">
                                                     <i class="bi bi-calendar"></i>
                                                     {{ \Carbon\Carbon::parse($row->event_date)->formatLocalized('%d %b %Y') }}
+                                                </div>
+                                                <div class="mt-2 fw-semibold">Rp
+                                                    {{ number_format($row->ticket_price, 0, ',', '.') }}
                                                 </div>
                                             </div>
                                             <div class="card-footer warna-footer">

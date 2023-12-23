@@ -33,7 +33,7 @@
                                 <p class="text-sm mb-0 text-uppercase font-weight-bold">
                                     Tiket Terjual
                                 </p>
-                                <h5 class="font-weight-bolder">462</h5>
+                                <h5 class="font-weight-bolder">{{ $totalTicketsSold }}</h5>
                             </div>
                         </div>
                         <div class="col-4 text-end">
@@ -52,9 +52,9 @@
                         <div class="col-8">
                             <div class="numbers">
                                 <p class="text-sm mb-0 text-uppercase font-weight-bold">
-                                    Sales
+                                    Pendapatan
                                 </p>
-                                <h5 class="font-weight-bolder">$103,430</h5>
+                                <h5 class="font-weight-bolder">RP. {{ number_format($totalSales, 0, ',', '.') }}</h5>
                             </div>
                         </div>
                         <div class="col-4 text-end">

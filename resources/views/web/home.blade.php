@@ -246,6 +246,9 @@
                                                     <i class="bi bi-calendar me-2"></i>
                                                     {{ \Carbon\Carbon::parse($event->event_date)->formatLocalized('%d-%m-%Y') }}
                                                 </div>
+                                                <div class="mt-2 fw-semibold">Rp
+                                                    {{ number_format($event->ticket_price, 0, ',', '.') }}
+                                                </div>
                                             </div>
                                             <div class="card-footer warna-footer">
                                                 {{ $event->organizer->name }}
@@ -297,6 +300,9 @@
                                                     <div>
                                                         <i class="bi bi-calendar me-2"></i>
                                                         {{ \Carbon\Carbon::parse($event->event_date)->formatLocalized('%d-%m-%Y') }}
+                                                    </div>
+                                                    <div class="mt-2 fw-semibold">Rp
+                                                        {{ number_format($event->ticket_price, 0, ',', '.') }}
                                                     </div>
                                                 </div>
                                                 <div class="card-footer warna-footer">
