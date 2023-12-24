@@ -41,11 +41,11 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         if ($user->hasRole('admin')) {
-            return redirect()->route('dashboard')->with('toast_success', 'Login Berhasil');
+            return redirect()->route('dashboard')->with('toast_success', 'Selamat Datang' . ' ' . $user->name);
         } elseif ($user->hasRole('organizer')) {
-            return redirect()->route('dashboard-organizer')->with('toast_success', 'Login Berhasil');
+            return redirect()->route('dashboard-organizer')->with('toast_success', 'Selamat Datang' . ' ' . $user->name);
         }
 
-        return redirect()->route('home')->with('toast_success', 'Login Berhasil');
+        return redirect()->route('home')->with('toast_success', 'Selamat Datang' . ' ' . $user->name);
     }
 }
