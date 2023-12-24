@@ -34,7 +34,7 @@
                                                 <div class="d-flex">
                                                     <i class="bi bi-calendar-event text-primary mx-2"></i>
                                                     <label
-                                                        id="tanggal-event">{{ \Carbon\Carbon::parse($transaction->event_date)->formatLocalized('%d %B %Y') }}</label>
+                                                        id="tanggal-event">{{ \Carbon\Carbon::parse($transaction->event->event_date)->formatLocalized('%d %B %Y') }}</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -56,8 +56,9 @@
                                             @endif
                                         </p>
                                         <div class="d-flex justify-content-start gap-2 pt-2">
-                                            <button class="btn btn-outline-primary">Invoice</button>
-                                            <button class="btn btn-outline-danger">Hapus</button>
+                                            <a href="{{ route('my-tiket.show', ['id' => $transaction->id]) }}"
+                                                class="btn btn-outline-primary">Invoice</a>
+                                            {{-- <button class="btn btn-outline-danger">Hapus</button> --}}
                                         </div>
 
                                     </div>

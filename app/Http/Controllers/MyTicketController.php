@@ -52,7 +52,14 @@ class MyTicketController extends Controller
      */
     public function show($id)
     {
-        //
+        $transaction = Transaction::with('event')->find($id);
+
+        if (!$transaction) {
+            return abort(404); // Atau atur respons lainnya jika transaksi tidak ditemukan
+        }
+
+        // Kirim data transaksi ke view invoice.blade.php
+        return view('web.invoice', compact('transaction'));
     }
 
     /**

@@ -65,11 +65,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/informasi-akun', 'AccountController@index')->name('informasi-akun');
     Route::post('/informasi-akun/update-profile/{id}', 'AccountController@update')->name('update.profile');
-    
+
     Route::get('/events/{id}/form-pembayaran', 'TransactionController@show')->name('form-pembayaran.show');
 
     Route::get('/tiket-saya', 'MyTicketController@index')->name('my-ticket.index');
 
+    Route::get('/tiket-saya/{id}', 'MyTicketController@show')->name('my-tiket.show');
 });
 // Home Landing Page
 Route::get('/home', 'HomeController@index')->name('home');
