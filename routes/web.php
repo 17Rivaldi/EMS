@@ -40,6 +40,9 @@ Route::middleware('role:admin')->group(function () {
     // Contact
     Route::get('/contact', 'ContactController@index')->name('contact.index');
     Route::get('/contact/{contact}/delete', 'ContactController@destroy')->name('contact.destroy');
+
+    // Customer
+    Route::get('/customer', 'CustomerController@index')->name('customer.index');
 });
 
 Route::middleware(['role:admin|organizer'])->group(function () {
@@ -57,6 +60,9 @@ Route::middleware(['role:admin|organizer'])->group(function () {
     Route::get('/daftar-event/{event}/edit', 'EventController@edit')->name('event.edit');
     Route::put('/daftar-event/{event}/edit', 'EventController@update')->name('event.update');
     Route::get('/daftar-event/{event}/delete', 'EventController@destroy')->name('event.destroy');
+
+    //Customer
+    Route::get('/customer-organizer', 'CustomerController@index')->name('customer-organizer');
 });
 
 Route::middleware(['auth'])->group(function () {

@@ -230,8 +230,16 @@
                 labels: labels,
                 datasets: [{
                     data: values,
-                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50', '#9C27B0'],
-                    hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50', '#9C27B0']
+                    backgroundColor: [
+                        '#FF6384', '#36A2EB', '#FFCE56', '#4CAF50', '#9C27B0',
+                        '#FF5722', '#607D8B', '#03A9F4', '#CDDC39', '#FF9800',
+                        '#795548', '#E91E63'
+                    ],
+                    hoverBackgroundColor: [
+                        '#FF6384', '#36A2EB', '#FFCE56', '#4CAF50', '#9C27B0',
+                        '#FF5722', '#607D8B', '#03A9F4', '#CDDC39', '#FF9800',
+                        '#795548', '#E91E63'
+                    ]
                 }]
             },
             options: {
