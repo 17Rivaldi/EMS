@@ -57,7 +57,7 @@
                                         </p>
                                         <div class="d-flex justify-content-start gap-2 pt-2">
                                             <a href="{{ route('my-tiket.show', ['id' => $transaction->id]) }}"
-                                                class="btn btn-outline-primary">Invoice</a>
+                                                class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">Invoice</a>
                                             {{-- <button class="btn btn-outline-danger">Hapus</button> --}}
                                         </div>
 

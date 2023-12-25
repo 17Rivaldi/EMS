@@ -117,5 +117,6 @@
         document.getElementsByTagName("nav")[0].remove()
         document.getElementsByClassName("site-header")[0].remove()
         document.getElementsByClassName("site-footer")[0].remove()
+        window.print()
     </script>
 @endsection
