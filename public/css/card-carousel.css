@@ -2,22 +2,22 @@
     margin-top: 10px;
 }
 
-.card{
+.card {
     margin-left: 15px;
-    height: 400px;
+    height: auto;
     padding: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.card img{
+.card img {
     margin: 0;
 }
 
-.card-text{
+.card-text {
     margin: 10px;
 }
 
-.card-title{
+.card-title {
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
@@ -32,7 +32,8 @@
     margin-right: 5px;
 }
 
-.carousel-control-prev, .carousel-control-next {
+.carousel-control-prev,
+.carousel-control-next {
     position: absolute;
     top: 0%;
     width: 50px;
@@ -55,11 +56,11 @@
 }
 
 @media (max-width: 768px) {
-    .carousel-inner .carousel-item>div {
+    .carousel-inner .carousel-item > div {
         display: none;
     }
 
-    .carousel-inner .carousel-item>div:first-child {
+    .carousel-inner .carousel-item > div:first-child {
         display: block;
     }
 }
@@ -72,7 +73,6 @@
 }
 
 @media (min-width: 768px) {
-
     .carousel-inner .carousel-item-right.active,
     .carousel-inner .carousel-item-next,
     .carousel-item-next:not(.carousel-item-start) {

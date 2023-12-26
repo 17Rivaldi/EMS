@@ -58,74 +58,82 @@
 
                 <a href="{{ route('login') }}" class="btn custom-btn d-lg-none ms-auto me-4">Login</a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
                         @if (request()->route()->getName() !== 'events.show' &&
-                        request()->route()->getName() !== 'form-pembayaran.show' &&
-                        request()->route()->getName() !== 'list-event' &&
-                        request()->route()->getName() !== 'informasi-akun' &&
-                        request()->route()->getName() !== 'my-ticket.index')
+                                request()->route()->getName() !== 'form-pembayaran.show' &&
+                                request()->route()->getName() !== 'list-event' &&
+                                request()->route()->getName() !== 'informasi-akun' &&
+                                request()->route()->getName() !== 'my-ticket.index')
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_1">Home</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_1">Home</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_2">About</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_2">About</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_3">Artists</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">Artists</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_4">Upcoming</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_4">Upcoming</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_5">Event's</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_5">Event's</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_6">Contact</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_6">Contact</a>
+                            </li>
                         @endif
                     </ul>
 
                     @guest
-                    <a href="{{ route('login') }}" class="btn custom-btn d-lg-block d-none"><i class="bi-fingerprint mx-1"></i>Login</a>
-                    @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="btn btn-outline-warning rounded-pill d-lg-block d-none ms-1">{{ __('Register') }}<i class="bi-fingerprint mx-1"></i></a>
-                    @endif
+                        <a href="{{ route('login') }}" class="btn custom-btn d-lg-block d-none"><i
+                                class="bi-fingerprint mx-1"></i>Login</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}"
+                                class="btn btn-outline-warning rounded-pill d-lg-block d-none ms-1">{{ __('Register') }}<i
+                                    class="bi-fingerprint mx-1"></i></a>
+                        @endif
                     @else
-                    @if (auth()->user()->hasRole('admin'))
-                    <a href="{{ route('dashboard') }}" class="btn btn-outline-warning rounded-pill mx-2"><i class="bi-speedometer2 mx-1"></i>Admin</a>
-                    @endif
-                    @if (auth()->user()->hasRole('user'))
-                    <div class="d-flex align-items-center">
-                        <div class="btn-group" role="group">
-                            <a href="{{ route('informasi-akun') }}" class="btn btn-outline-warning">
-                                <i class="bi bi-person-circle mx-1"></i>Profile
-                            </a>
-                            <a href="{{ route('my-ticket.index') }}" class="btn btn-outline-warning">
-                                <i class="bi bi-ticket-detailed mx-1"></i>My Ticket
-                            </a>
-                        </div>
-                    </div>
-                    @endif
-                    @if (auth()->user()->hasRole('organizer'))
-                    <a href="{{ route('dashboard-organizer') }}" class="btn btn-outline-warning rounded-pill mx-2"><i class="bi-speedometer2 mx-1"></i>Dashboard</a>
-                    @endif
-                    <a href="{{ route('logout') }}" class="btn custom-btn d-lg-block d-none mx-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="bi-box-arrow-right mx-1"></i>{{ __('Logout') }}
-                    </a>
+                        @if (auth()->user()->hasRole('admin'))
+                            <a href="{{ route('dashboard') }}" class="btn btn-outline-warning rounded-pill mx-2"><i
+                                    class="bi-speedometer2 mx-1"></i>Admin</a>
+                        @endif
+                        @if (auth()->user()->hasRole('user'))
+                            <div class="d-flex align-items-center">
+                                <div class="btn-group" role="group">
+                                    <a href="{{ route('informasi-akun') }}" class="btn btn-outline-warning">
+                                        <i class="bi bi-person-circle mx-1"></i>Profile
+                                    </a>
+                                    <a href="{{ route('my-ticket.index') }}" class="btn btn-outline-warning">
+                                        <i class="bi bi-ticket-detailed mx-1"></i>My Ticket
+                                    </a>
+                                </div>
+                            </div>
+                        @endif
+                        @if (auth()->user()->hasRole('organizer'))
+                            <a href="{{ route('dashboard-organizer') }}"
+                                class="btn btn-outline-warning rounded-pill mx-2"><i
+                                    class="bi-speedometer2 mx-1"></i>Dashboard</a>
+                        @endif
+                        <a href="{{ route('logout') }}" class="btn custom-btn d-lg-block d-none mx-2"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
+                                class="bi-box-arrow-right mx-1"></i>{{ __('Logout') }}
+                        </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     @endguest
                 </div>
             </div>
@@ -188,37 +196,37 @@
 
                 <div class="col-lg-6 col-12 mb-4 pb-2">
                     @if (request()->route()->getName() !== 'events.show' &&
-                    request()->route()->getName() !== 'form-pembayaran.show' &&
-                    request()->route()->getName() !== 'list-event' &&
-                    request()->route()->getName() !== 'informasi-akun' &&
-                    request()->route()->getName() !== 'my-ticket.index') 
-                    <h5 class="site-footer-title mb-3">Links</h5>
+                            request()->route()->getName() !== 'form-pembayaran.show' &&
+                            request()->route()->getName() !== 'list-event' &&
+                            request()->route()->getName() !== 'informasi-akun' &&
+                            request()->route()->getName() !== 'my-ticket.index')
+                        <h5 class="site-footer-title mb-3">Links</h5>
 
-                    <ul class="site-footer-links">
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Home</a>
-                        </li>
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#section_1" class="site-footer-link">Home</a>
+                            </li>
 
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">About</a>
-                        </li>
+                            <li class="site-footer-link-item">
+                                <a href="#section_2" class="site-footer-link">About</a>
+                            </li>
 
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Artists</a>
-                        </li>
+                            <li class="site-footer-link-item">
+                                <a href="#section_3" class="site-footer-link">Artists</a>
+                            </li>
 
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Schedule</a>
-                        </li>
+                            <li class="site-footer-link-item">
+                                <a href="#section_4" class="site-footer-link">Upcoming</a>
+                            </li>
 
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Pricing</a>
-                        </li>
+                            <li class="site-footer-link-item">
+                                <a href="#section_5" class="site-footer-link">Event's</a>
+                            </li>
 
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Contact</a>
-                        </li>
-                    </ul>
+                            <li class="site-footer-link-item">
+                                <a href="#section_6" class="site-footer-link">Contact</a>
+                            </li>
+                        </ul>
                     @endif
                 </div>
 

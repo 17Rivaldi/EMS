@@ -64,7 +64,7 @@
                                     <div class="col">
                                         <label for="name" class="form-label">Nama</label>
                                         <input type="text" class="form-control" id="name" name="name"
-                                            placeholder="Masukkan nama" value="{{ $user->name }}" required>
+                                            placeholder="Masukkan nama" value="{{ $user->name }}" autofocus required>
                                     </div>
                                     <div class="col">
                                         <label for="email" class="form-label">Email</label>
